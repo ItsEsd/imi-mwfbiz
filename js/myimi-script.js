@@ -203,7 +203,6 @@ document.getElementById('motoincon').style.display = 'block';
 else{
   document.getElementById("GIF2").innerHTML =
   '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
-  document.getElementById("loader").style.display = "none";
 }
 
   }
