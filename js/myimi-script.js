@@ -126,7 +126,6 @@ else if(userel !=""){
 
 function switchvisitor(label){
   var vistr = "bizbebpi85gkgfhd4g58ld01n";
-  console.log(vistr);
     show_wallV(vistr); 
   setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
@@ -153,7 +152,6 @@ function switchvisitor(label){
         var obdm_mi2 ='AKfycbxMB_CVJADYxgJnvRaivKZhzXsG6gUhiPW1qYJqfvSrMS1GYtrmZDaemUzz8AUDoeLV'
         var obdm_mi = obdm_mi1 + obdm_mi2+ "/exec";
         var urlm = obdm_mi + "?callback=ctrlqobdm&usid="+locksee+"&action=rdobdm";
-        console.log(urlm);
         var request = jQuery.ajax({
           crossDomain: true,
           url: urlm,
