@@ -1159,3 +1159,32 @@ color: #161616;
   max-width:280px;border-radius:4px;
   width:70%;
 }
+
+#switchtovisit{
+display:none;
+}
+#switchtovisit a{
+bottom:40px;
+left:20px;
+position: fixed;
+text-decoration: none;
+font-size:60px;
+cursor: pointer;
+}
+#switchtov{
+  color:#3d3c3c;
+  transition: 0.2;
+}
+#switchtov:hover{
+  color:#a17e0a;
+  transition: 0.2;
+}
+#switchtoc{
+  color:#3d3c3c;
+  transition: 0.2;
+}
+
+#switchtoc:hover{
+  color:#a17e0a;
+  transition: 0.2;
+}
