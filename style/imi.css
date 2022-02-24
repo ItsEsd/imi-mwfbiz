@@ -590,11 +590,15 @@ background-color: rgba(253, 43, 43, 0.658);
 .iteam-2{
   width:98%;
   max-width:1000px;
-  border-radius: 10px;
+  border-radius: 0px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   animation: bizanimtwo 10s infinite;
 }
 .iteam-2 iframe{
-  border-radius: 10px;
+  border-radius: 0px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   background-color: rgba(253, 43, 43, 0.658);}
 @keyframes bizanimtwo {
   0% { border: 1px dotted #1942fa;
