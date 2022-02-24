@@ -538,12 +538,7 @@
     #box {
       overflow-y: visible;
       overflow-x: auto;
-      white-space: nowrap;
-      vertical-align: text-top;
-      margin: auto;
-      padding-bottom: 10px;
-      clear: both;
-      border-spacing: 14px;
+    
     }
 .imititle{
   color:#DD1D16;
@@ -570,8 +565,8 @@
       width: 320px;
       font-size: 140px;
       border: 1px dashed #DD1D16;
-      border-radius: 5px;
-      padding: 5px;
+      border-radius: 6px;
+      padding: 2px;
       margin: auto;
       white-space: normal;
       line-height: 1.6;
@@ -588,22 +583,29 @@
       /* Safari 3-8 */
       transform: scale(1.06);
     }
+    .iteam iframe{
+      border-radius: 6px;
+background-color: rgba(253, 43, 43, 0.658);
+    }
 .iteam-2{
   width:98%;
-  max-width:800px;
-  border-radius: 5px;
+  max-width:1000px;
+  border-radius: 10px;
   animation: bizanimtwo 10s infinite;
 }
+.iteam-2 iframe{
+  border-radius: 10px;
+  background-color: rgba(253, 43, 43, 0.658);}
 @keyframes bizanimtwo {
-  0% { border: 2px solid #1942fa;
+  0% { border: 1px dotted #1942fa;
   box-shadow: 0px 2px 6px 0px #1942fa;}
-  25%{ border: 2px solid #21fc21;
+  25%{ border: 1px dotted #21fc21;
     box-shadow: 0px 2px 6px 0px #21fc21;}
-    50%{ border: 2px solid #e6fc21;
+    50%{ border: 1px dotted #e6fc21;
       box-shadow: 0px 2px 6px 0px #fced21;}
-      75%{ border: 2px solid #fd3319;
+      75%{ border: 1px dotted #fd3319;
         box-shadow: 0px 2px 6px 0px #fd3319;}
-        100%{ border: 2px solid #ec2435;
+        100%{ border: 1px dotted #ec2435;
           box-shadow: 0px 2px 6px 0px #ec2435;}
 }
 #box-2{
