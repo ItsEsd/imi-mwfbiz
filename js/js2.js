@@ -85,7 +85,6 @@ function show_wallV(vistr) {
   var obdm_mi2 ='AKfycbxMB_CVJADYxgJnvRaivKZhzXsG6gUhiPW1qYJqfvSrMS1GYtrmZDaemUzz8AUDoeLV'
   var obdm_mi = obdm_mi1 + obdm_mi2+ "/exec";
   var urlm = obdm_mi + "?callback=ctrlqobdmv&usid="+vistr+"&action=rdobdm";
-  console.log(urlm);
   var request = jQuery.ajax({
     crossDomain: true,
     url: urlm,
@@ -107,20 +106,20 @@ jQuery('.hrstyle').show();
 var k, m;
 var VID = JSON.parse(res[0].YouVid);
 var k = VID.imiYouVid.length;
-/*
+
 var m = Math.floor((Math.random() * k - 1) + 1);
 
 var link = VID.imiYouVid[m];
 var vidid = getId(link);
 //  console.log(vidid);
 document.getElementById("YoutubeOne").innerHTML = '<div class="iteam-2"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-*/
 
+/*
 for (m = 0; m < k; m++) {
 var link = VID.imiYouVid[m];
 var vidid = getId(link);
 document.getElementById("YoutubeOne").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-}
+}*/
 var s, j;
 var news = JSON.parse(res[0].imiNews);
 var s = news.newsTitle.length;
