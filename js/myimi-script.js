@@ -92,7 +92,7 @@ else if(userclmofr != ""){
 
 else if(usergu != ""){
   var locksee = "bizbebpi85gkgfhd4g58ld01n";
-  show_wall(locksee);     
+  show_wallV(locksee);     
 /*  setTimeout(function(e) {
     rzp1.open();
     e.preventDefault();
@@ -285,8 +285,8 @@ function ctrlqelp(e) {
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
     var uid =k+"."+window.btoa(String(outp[0].UserRefId));
     elSetCookie(sessexp,uid);
-    setTimeout(function(){window.open('https://imi.mwfbiz.com', '_self');
-    },500);
+   // setTimeout(function(){ window.open('https://imi.mwfbiz.com', '_self');},500);
+   location.reload();
   }
 }
 
@@ -297,6 +297,105 @@ $('#motoinfo').toggle('fast');
 $(document).ready(function(){
 document.body.style.scrollTop = "0px";
 });
+
+/////////////////////////////////////////////////////
+
+function show_wallV(vistr) {
+  jQuery('.hrstyle').hide();
+  jQuery("#YoutubeOne").empty();
+  jQuery("#News1").empty();
+  jQuery("#GIF2").empty();
+  jQuery("#Bio2").empty();
+  document.getElementById("guru_eye").style.display = "none";
+  document.getElementById("id01").style.display = "none";
+  document.getElementById("id03").style.display = "none";
+  document.getElementById("loader_wall").style.display = "block";
+  document.getElementById("showhtml").style.display = "block";
+  var obdm_mi1 = "https://script.google.com/macros/s/";
+  var obdm_mi2 ='AKfycbxMB_CVJADYxgJnvRaivKZhzXsG6gUhiPW1qYJqfvSrMS1GYtrmZDaemUzz8AUDoeLV'
+  var obdm_mi = obdm_mi1 + obdm_mi2+ "/exec";
+  var urlm = obdm_mi + "?callback=ctrlqobdmv&usid="+vistr+"&action=rdobdm";
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url: urlm,
+    method: "GET",
+    dataType: "jsonp"
+  });
+
+
+}
+function ctrlqobdmv(e){
+var res = e.result;
+if(res[0].GIFGifts!=''){
+var g = Math.floor((Math.random() * 6) + 1);
+var gifts = JSON.parse(res[0].GIFGifts);
+//    for (prop in json.records[g]) {
+document.getElementById("GIF2").innerHTML = '<img frameborder="0" width="80%" style="max-width:400px;border-radius:4px;" src="' + gifts.GIFimi[g] + '">';
+//    }
+jQuery('.hrstyle').show();
+var k, m;
+var VID = JSON.parse(res[0].YouVid);
+var k = VID.imiYouVid.length;
+
+var m = Math.floor((Math.random() * k - 1) + 1);
+
+var link = VID.imiYouVid[m];
+var vidid = getId(link);
+//  console.log(vidid);
+document.getElementById("YoutubeOne").innerHTML = '<div class="iteam-2"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
+
+/*
+for (m = 0; m < k; m++) {
+var link = VID.imiYouVid[m];
+var vidid = getId(link);
+document.getElementById("YoutubeOne").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
+}*/
+var s, j;
+var news = JSON.parse(res[0].imiNews);
+var s = news.newsTitle.length;
+var n = Math.floor((Math.random() * s - 1) + 1);
+//  for (prop in news.newsTitle[n]) {
+document.getElementById("News1").innerHTML = '<div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[n] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[n] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[n] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[n] + '<a target="_blank" class="readmore" href="' + news.conLink1[n] + '">' + news.conSiteName1[n] + '</a> </p> <hr> <p>' + news.conTitle2[n] + '<a target="_blank" class="readmore" href="' + news.conLink2[n] + '">' + news.conSiteName2[n] + '</a></p> </div> </div> </div> </div>';
+//  }
+var y = Math.floor((Math.random() * 6) + 1);
+var quotes = JSON.parse(res[0].HayQuotes);
+var bio = (res[0].Bio2).split(';');
+var biostrln = bio.length;
+var kl = Math.floor((Math.random() * biostrln));
+if(bio[kl] != ""){
+
+document.getElementById("Bio2").innerHTML = '<div style="max-width:600px;"><h5 style="color:#DD1D16;"><b>' + bio[kl] + '</b></h5><p>' + quotes.Quoteimi[y] + '</p></div>';
+}
+else{
+document.getElementById("Bio2").innerHTML ='<div style="max-width:600px;"><p>' + quotes.Quoteimi[y] + '</p></div>';
+}
+//   for (prop in json.records[y]) {
+//  document.getElementById("Bio2").innerHTML = '<div style="max-width:600px;"><h5 style="color:#DD1D16;"><b>' + bio[y] + '</b></h5><p>' + quotes.Quoteimi[y] + '</p></div>';
+//   }
+var motostr = res[0].ADMIINMotto;
+var motocon = motostr.split('{biz}');
+document.getElementById('motoincon').style.display = 'block';
+document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><span class="motocontit">'+motocon[1]+'</span></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
+document.getElementById("loader_wall").style.display = "none";
+document.getElementById("guru_eye").style.display = "none";
+}
+else{
+document.getElementById("GIF2").innerHTML =
+'<h4 class="noobdm">Empty MONOLOGUE!</h4>';
+}
+
+document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='Switch to Elite' onclick='show_wall(locksee);'>&#10064;</a>";
+
+}
+function getId(url) {
+  var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  var match = url.match(regExp);
+  if (match && match[2].length == 11) {
+    return match[2];
+  } else {
+    return 'error';
+  }
+}  
 
 
 /*∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙∙∙·▫▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ ｉтŞᵉˢᗪ ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫ₒₒ▫ᵒᴼᵒ▫▫·∙∙
