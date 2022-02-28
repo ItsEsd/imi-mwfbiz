@@ -173,6 +173,7 @@ function insertUser() {
   }
 }
 function signuser(){
+  document.getElementById('reg').disabled = true;
     var email = jQuery("#email").val();
     var dobd = jQuery("#dobday").val();
     var dobm = jQuery("#dobmonth").val();
@@ -181,7 +182,7 @@ function signuser(){
     var row4 = jQuery("#password").val();
     var row5 = jQuery("#dgen_p").val();
     if(email !=0 &&  dobd!=0 && dobm !=0 &&  doby!=0 && row3 !=0 && row4 !=0 &&  row5!=0){
-    var optionsv = {
+  /*  var optionsv = {
         "key": "rzp_live_zeJJQym7llbiEc",
         "amount": "19900",
         "currency": "INR",
@@ -211,13 +212,26 @@ function signuser(){
         }
       };
       var rzpv = new Razorpay(optionsv);
-      rzpv.open();
+      rzpv.open(); */
+      jQuery("#re").css("visibility", "hidden");
+      document.getElementById("loader").style.visibility = "visible";
+      jQuery('#mySpinner').addClass('spinner');
+        var url = usrc_ + "?callback=ctrlqretrn&email=" + email + "&dobday=" + dobd + "&dobmonth=" + dobm + "&dobyear=" + doby + "&country=" + row3 + "&password=" + row4 + "&dgen_p=" + row5 + "&action=chdhfjkhhkdhffndflsdfoirwl-fnfkmsdkflkdsfjsd8ffsdfdsf289432morprewr-rhktrktnhrhgnghchnghcreigre-4985ctirnhteriuthitvnerihrerer-ernvit5ytitv9y5tv5ntvmfjdfdfhfifnhnhfgrgmofgfdgdfgdf-dgmrgkfhgfdhgkfdvhgdfgeruigkhkdgdflgdf-gdfmgldfgkhdfgdfkghdgiudfygdfvidfnhgergrd-ggvdfnghdfhgyrtu9turmtreut9uer957654tmgf";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+     //   console.log(url);
+       
     }
 
     else{
         return false;
     }
 }
+/*
 function ctrlqpcheck(e){
     var re = e.result;
     if(re=="Payment successful!"){
@@ -245,6 +259,27 @@ function ctrlqpcheck(e){
     var exdays = 1;
     userSetCookie(exdays,uid);
 }
+}*/
+
+function ctrlqretrn(e){
+  var re = e.result;
+    if(re=="Insertion successful!"){
+      jQuery("#re").css("visibility", "hidden");
+    document.getElementById("loader").style.visibility = "visible";
+    jQuery('#mySpinner').addClass('spinner');
+  //  document.getElementById("id03").style.display = "block";
+  //  document.getElementById("id02").style.display = "none";
+    document.getElementById('reg').disabled = false;
+    var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
+    var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
+    var exdays = 1;
+    userSetCookie(exdays,uid);
+    location.reload();
+    }
+    else{
+    document.getElementById('reg').disabled = false;
+    return false;
+    }
 }
 
 document.getElementById("dobyear").addEventListener("input", mydgen);
@@ -281,23 +316,21 @@ function verifyEmail() {
 function ctrlsign(e){
   var res =e.records;
   if(res!="ID not found!"){
-    
-    document.getElementById("signin").style.display = 'none';
-    document.getElementById("title").style.display = 'none';
-    document.getElementById("idimi").style.display = 'block';
-    document.getElementById("btnSign").style.display = 'none';
-    document.getElementById("sig").style.display = 'none';
-    document.getElementById("loader").style.visibility = "hidden";
-  
-
+  //  document.getElementById("signin").style.display = 'none';
+  //  document.getElementById("title").style.display = 'none';
+ //   document.getElementById("idimi").style.display = 'block';
+ //   document.getElementById("btnSign").style.display = 'none';
+ //   document.getElementById("sig").style.display = 'none';
+ //   document.getElementById("loader").style.visibility = "hidden"; 
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
-    var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String(res[0].ID));
+    //var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String(res[0].ID));
+    var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
     var exdays = 1;
     userSetCookie(exdays,uid);
-    setTimeout(function() {
-      window.open("https://imi.mwfbiz.com", "_self");
-    }, 500);
-  
+ //   setTimeout(function() {
+ //     window.open("https://imi.mwfbiz.com", "_self");
+ //   }, 500);
+    location.reload();
   }
 else{
   document.getElementById("pcheck").style.display = 'block';
