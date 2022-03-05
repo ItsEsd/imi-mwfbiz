@@ -876,7 +876,7 @@
     <div id="tea">
       <div style="display:block;" id="miv" >
         <div id="id02" style="display:none;">
-          <form class="modal-content animate birthdate-verification registerForm" id="register" name="registration" onsubmit="return false;">
+          <form class="modal-content animate birthdate-verification registerForm" id="register" name="registration" target="hiddenfrm">
             <div class="imgcontainer"> <span onclick="document.getElementById('id02').style.display='none';document.getElementById('guru_eye').style.display='block';" class="close" title="Close">&times;</span> <img src="../image/blackglobegif.gif" class="logo"> <br><br>
               <h2 style="color:#161616;">mind Without Fear</h2>
               <div align="center">
@@ -1225,7 +1225,7 @@
           </div>
           <div id="modPass" style="background-color:white;border-radius:10px;width:80%;display:none;max-width:400px;"><br>
             <div id="showPass"></div>
-            <form id="newPassForm" onsubmit="return false;" align="center" style="max-width:400px;width:80%;"><input id="passwordnew" class="form-control" placeholder="New Passcode" type="password" required /><br><span id="messagenew" style="float:right;color:red;"></span><input id="confirm_passwordnew" class="form-control " placeholder="Confirm Passcode" type="password" required /><br><input id="svnewpass" class="passbtn" type="submit" value="Save" style="margin-right:4px;" disabled /><input type="button" value="Close" onclick="document.getElementById('modPass').style.display='none';document.getElementById('repass').style.display='block';" class="passbtn" /></form><br>
+            <form id="newPassForm" target="hiddenfrm" align="center" style="max-width:400px;width:80%;"><input id="passwordnew" class="form-control" placeholder="New Passcode" type="password" required /><br><span id="messagenew" style="float:right;color:red;"></span><input id="confirm_passwordnew" class="form-control " placeholder="Confirm Passcode" type="password" required /><br><input id="svnewpass" class="passbtn" type="submit" value="Save" style="margin-right:4px;" disabled /><input type="button" value="Close" onclick="document.getElementById('modPass').style.display='none';document.getElementById('repass').style.display='block';" class="passbtn" /></form><br>
           </div><br>
           <div align="center" style="padding-top:0px;"><p><span class="qb" onclick="goBack()" style="cursor:pointer;text-align: center;">&#10020; Mind Without Fear | M W F >></span></p></div>
     <div align="center" style="width: 100%;z-index:0;">
@@ -1249,7 +1249,7 @@
           <div align="center" id="title"> <img src="../image/bandwgif_globe.gif" width="60px"><br><br>
             <h2>mind Without Fear</h2>
           </div>
-          <form id="signin" onsubmit="return false">
+          <form id="signin" target="hiddenfrm">
             <div class="container">
               <div class="page"> <label class="field field_v3" id="mailblock"> <input type="email" class="field__input" placeholder="e.g. example@gmail.com" name="email1" id="email1" required> <span class="field__label-wrap"> <span class="field__label"> <i class="fa fa-envelope" style="color:#DD1d16"></i> Enter Email</span> </span> </label> <label class="field field_v3"> 
                 <input type="password" id="password1" name="password1" class="field__input" placeholder="e.g. **********" autocomplete="off" required> 
@@ -1356,6 +1356,7 @@
         <hr style="border-width:1px;border-color:white;width:98%">
       </div><br>
     </div><br><br><br>
+    <iframe name="hiddenfrm" target="hiddenfrm" style="display:none;"></iframe>
     <!--------Footer----->
     <footer style="background:black;">
       <div align="center" style="background:black;padding-top:10px;min-height:60px;">
@@ -1407,7 +1408,7 @@
     <script src="js/myimi-script.js"></script>
     <script src="js/claim-ofr.js"></script>
     <script src="js/reviews.js"></script>
-    <form name="gform" id="glocform" enctype="text/plain" style="display:none;" action="https://docs.google.com/forms/d/e/1FAIpQLSf5PcdCkDENQ58q3_J01VGFgHURQQyP8AVHkMtxgiE28d9AkA/formResponse?" target="hidden_iframe" onsubmit="return false;"><input id="entry.478650065" name="entry.478650065" /><input id="entry.1282852792" name="entry.1282852792" /><input id="entry.377350750" name="entry.377350750" /><input id="entry.1133528172" name="entry.1133528172" /></form><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <form name="gform" id="glocform" enctype="text/plain" style="display:none;" action="https://docs.google.com/forms/d/e/1FAIpQLSf5PcdCkDENQ58q3_J01VGFgHURQQyP8AVHkMtxgiE28d9AkA/formResponse?" target="hidden_iframe"><input id="entry.478650065" name="entry.478650065" /><input id="entry.1282852792" name="entry.1282852792" /><input id="entry.377350750" name="entry.377350750" /><input id="entry.1133528172" name="entry.1133528172" /></form><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
