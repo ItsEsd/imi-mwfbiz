@@ -64,7 +64,7 @@ if (user != "") {
     } 
     if (c.indexOf("_ybizc0") == 0) { 
       var userelcook = c.substring(1).split('.');
-      var locksee = window.atob(userelcook[1]);
+      var locksee = window.atob(userelcook[1]);console.log(locksee);
       show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
       document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
     } 
