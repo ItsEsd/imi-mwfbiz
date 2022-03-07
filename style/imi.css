@@ -717,7 +717,9 @@ background-color: rgba(253, 43, 43, 0.658);
     }
 
     #id02 {
-      top: 0px;
+      width:100%;
+      max-width:800px;
+      margin-top: 20px;
       text-align: left;
       float:center;
     }
