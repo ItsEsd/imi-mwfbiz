@@ -64,7 +64,7 @@ if (user != "") {
     } 
     if (c.indexOf("_ybizc0") == 0) { 
       var userelcook = c.substring(1).split('.');
-      var locksee = window.atob(userelcook[1]);console.log(locksee);
+      var locksee = window.atob(userelcook[1]);
       show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
       document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
     } 
@@ -163,7 +163,11 @@ function switchvisitor(label){
       }
 function ctrlqobdm(e){
 var res = e.result;
-if(res[0].GIFGifts!=''){
+if(res ==='Set Motto!'){
+  document.getElementById("GIF2").innerHTML =
+'<h4 class="noobdm">Empty MONOLOGUE!</h4>';
+}
+else if(res[0].GIFGifts!=''){
   var g = Math.floor((Math.random() * 6) + 1);
   var gifts = JSON.parse(res[0].GIFGifts);
 //    for (prop in json.records[g]) {
