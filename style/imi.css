@@ -1196,3 +1196,31 @@ cursor: pointer;
   color:#a17e0a;
   transition: 0.2;
 }
+
+.mySwiper{
+  z-index:100;
+}
+.swiper{
+  max-width:800px;
+}
+
+.swiper-button-next{
+  right:0 !important;
+  background-color: #0e0e0e;
+  color:#d61010b6!important;
+  padding-top:25px;padding-bottom:25px;
+}
+
+.swiper-button-prev{
+  left:0 !important;
+  background-color: #0e0e0e;
+  color:#d61010b6!important;
+  padding-top:25px;padding-bottom:25px;
+
+}
+.swiper-button-next:hover,.swiper-button-prev:hover{
+opacity:0.8;
+}
+footer{
+  z-index:100;
+}
