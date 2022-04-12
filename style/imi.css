@@ -870,30 +870,70 @@ background-color: rgba(253, 43, 43, 0.658);
       margin-right: 28px;
       transition: 0.3s;
     }
-#rvform{min-height:380px;}
+  #rvform{
+  min-height:380px;
+  margin-bottom:10px;
+  }
     #rvform .form-control{
-border:2px solid #c7c6c4;
-
+      margin-top:10px;
+      border:2px solid #c7c6c4;
+      font-size:14px;
+      border-radius:20px;
     }
-
+    #rvform input{
+      height:40px;
+    }
+    #rvform textarea{
+    max-height: 200px;
+    }
+#rvform label{
+  font-size:14px;
+}
     #reviewsec{
-    padding:40px;
+      height:100%;
+    padding:20px;
     width:100%;
     max-width:800px;
     text-align: left;
     background-color: white;
-    z-index: 1;
+    z-index: 1000;
   }
-     #mviews{
+.norevwyt{
+  padding-top:160px;
+}
+.norevwyt h4{
+  font-size:20px;
+  color:#3d3c3c;
+}
+
+#loader-rv{
+  width:100px;
+  height:100px;
+  margin-top:140px;
+}
+.reviewelm{
+  margin:10px;
+  border-radius: 20px;
+  border: 1px solid grey;
+  box-shadow: 0px 2px 10px 0px grey;
+}
+.rvelmpone{
+  margin-bottom:5px;
+  border-bottom: 1px solid #bb3333;
+}
+.rvelmptwo{
+
+}  
+#mviews{
       
       width:100%;
       max-width:800px;
       text-align: left;
       background-color: white;
-      height:360px;
+      height:400px;
       overflow-y: auto;
       overflow-x: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       z-index: 1;
     }
     #mviews::-webkit-scrollbar {
@@ -1200,6 +1240,7 @@ cursor: pointer;
 
 .mySwiper{
   z-index:100;
+  background-color: #161616d5;
 }
 .swiper{
   max-width:800px;
