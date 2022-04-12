@@ -91,7 +91,7 @@ function show_wallV(vistr) {
     method: "GET",
     dataType: "jsonp"
   });
-
+  showreviews(vistr);
 
 }
 function ctrlqobdmv(e){
@@ -106,9 +106,7 @@ jQuery('.hrstyle').show();
 var k, m;
 var VID = JSON.parse(res[0].YouVid);
 var k = VID.imiYouVid.length;
-
 var m = Math.floor((Math.random() * k - 1) + 1);
-
 var link = VID.imiYouVid[m];
 var vidid = getId(link);
 //  console.log(vidid);
@@ -149,6 +147,7 @@ document.getElementById('motoincon').style.display = 'block';
 document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><span class="motocontit">'+motocon[1]+'</span></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
 document.getElementById("loader_wall").style.display = "none";
 document.getElementById("guru_eye").style.display = "none";
+
 }
 else{
 document.getElementById("GIF2").innerHTML =
