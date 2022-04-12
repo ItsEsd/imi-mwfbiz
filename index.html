@@ -1249,7 +1249,7 @@
             <div id="Bio2" style="max-width:1000px;"></div>
           </div><br>
           <div align="center" id="repass"> <input type="button" id="mypass" onclick="document.getElementById('modPass').style.display='block';document.getElementById('repass').style.display='none';" style="display:none;width:100px;height:36px;color:white;background-color:#dd1d16;border:none;border-radius:4px;" value="My Pass" /> 
-            <input type="button" id="reviewm" onclick="$('#bigboss').show();" style="width:260px;height:36px;color:white;background-color:#dd1d16;border:none;border-radius:4px;" value="Send / See Reviews" /> 
+            <input type="button" id="reviewm" onclick="$('#bigboss').show('fast');" style="width:260px;height:36px;color:white;background-color:#dd1d16;border:none;border-radius:4px;" value="Send / See Reviews" /> 
            <!-- <input id="refresh" type="button" onclick="document.body.scrollTop = 0;document.documentElement.scrollTop = 0;" style="width:100px;height:36px;color:white;background-color:#dd1d16;border:none;border-radius:4px;" value="Refresh" />-->
             <p id="tips" style="display:none;font-size:14px;color:hsl(240, 100%, 65%);cursor:pointer;">Pay Tips >></p>
           </div>
@@ -1298,27 +1298,48 @@
       </div>
     </div>
     <!---------------------------------------------------------------------------->
-<section><div id="bigboss" align='center' style="display:none;">
+<section>
+<div id="bigboss" align='center' style="display:none;">
   
 <div id="reviewsec" > <span class="closerv" title='Close' onclick='$("#bigboss").hide();'>X</span><h4>Reviews</h4><hr>
   <div id="mviews" style="display: none;" >
-    <div id="loader-rv" class="spinner-border text-warning" style="display: none;"></div>
-    <div id="commentInbox">  
+    <center><div id="loader-rv" class="spinner-border text-warning" style="display: none;"></div></center>
+   <div id="commentInbox">  
     </div> 
     </div>
+  
+<!--------->
+
 <form id="rvform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSekQWVOontzf3jjEJngRaBMFtUxi1w8731c_lag-2T6ReswAA/formResponse?" target="hidden_iframe">
-<label>Name:</label>
-<input type="text" class="form-control" minlength="4" name="entry.1140798952" id="entry.1140798952" placeholder="Full Name" required/><br>
+  
+<div class="row">
+  <div class="col-md-6">
+  <label>My Musk:</label>
+<input type="text" class="form-control" minlength="4" name="entry.1140798952" id="entry.1140798952" placeholder="Full Name" required/>
+</div>
+
+<div class="col-md-6">
+  <label>Email:</label>
+<input type="email" class="form-control" name="entry.38856564" id="entry.38856564" placeholder="Email Address" required/>
+</div>
+</div>
+<br>
 <label>Comment:</label>
 <textarea type="text" class="form-control" style="height:140px;overflow-y:auto;" minlength="200" maxlength="500" placeholder="Minimum 200 Characters" name="entry.1148292079" id="entry.1148292079" required></textarea><br>
 <input type="submit" id='submitview' value="Send Review" /><br>
+<input id="entry.2036725465" name="entry.2036725465" style="display: none;" placeholder="adminid"><input id="entry.103080979" name="entry.103080979" style="display: none;" placeholder="commnetid">
   </form>
- <div style="background-color: white;height:120px;"> <div align ='left'>
+
+<!-------->  
+ <div style="background-color: white;height:120px;border-top: 1px solid #80808070;padding-top:20px;"> 
+  <div align ='left'>
    <button class="btn btn-outline-success" id="sdview" onclick='viewrform();'>Send Review</button>
-  <button class="btn btn-dark" id="rvbtn" onclick="showreviews();"><span id='ref'>See Reviews</span></button></div>
+  <button class="btn btn-dark" id="rvbtn" onclick="showreviews();"><span id='ref'>See Reviews</span>
+  </button></div>
   
 </div>
 </div>
+
 </div>
 
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
@@ -1327,7 +1348,6 @@
     document.getElementById('submitview').disabled=true;
     setTimeout(function(){showreviews();
     }, 2000);
-   // $('#rvform').prepend('Your submission has been processed...');
     ;
     });
   </script>
@@ -1435,10 +1455,7 @@
         e.preventDefault();
       } */
 
-    </script>
-    <script src="js/myimi-script.js"></script>
-    <script src="js/claim-ofr.js"></script>
-    <script src="js/reviews.js"></script>
+    </script><script src="js/reviews.js"></script><script src="js/myimi-script.js"></script> <script src="js/claim-ofr.js"></script>
     <form name="gform" id="glocform" enctype="text/plain" style="display:none;" action="https://docs.google.com/forms/d/e/1FAIpQLSf5PcdCkDENQ58q3_J01VGFgHURQQyP8AVHkMtxgiE28d9AkA/formResponse?" target="hidden_iframe"><input id="entry.478650065" name="entry.478650065" /><input id="entry.1282852792" name="entry.1282852792" /><input id="entry.377350750" name="entry.377350750" /><input id="entry.1133528172" name="entry.1133528172" /></form><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
