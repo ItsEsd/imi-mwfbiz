@@ -844,7 +844,6 @@ background-color: rgba(253, 43, 43, 0.658);
     /* Track */
     ::-webkit-scrollbar-track {
       border-radius: 10px;
-      background-color: #55555583;
     }
 
     /* Handle */
