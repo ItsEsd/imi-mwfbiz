@@ -9,7 +9,6 @@ function showreviews(lksee){
     if(lksee ==undefined){
         var lksee = document.getElementById("entry.2036725465").value;
     }
-
 var countcmnt = "n";
 var ur1="https://script.google.com/macros/s/";
 var ur2="AKfycbyzJPAp1Ep0pwT74LnzdvbnRj7xxGcfWj1chl5gmqC3cUnQNWk5gP05ltgycDHpr2djpg";
@@ -29,8 +28,6 @@ document.getElementById('commentInbox').innerHTML +="<div class='reviewelm'><p c
         document.getElementById('commentInbox').innerHTML ="<div class='norevwyt'><center><h4>No Reviews. Be first to give a Review.</h4></center></div>";
      }
      document.getElementById('loader-rv').style.display="none";
-
-
      var user = elGetCookie("_ybizc0"); 
      if(user != "" && lksee !="bizbebpi85gkgfhd4g58ld01n"){
          $('.delcombtn').show();
@@ -39,16 +36,12 @@ document.getElementById('commentInbox').innerHTML +="<div class='reviewelm'><p c
     return false;
        }
 });
-
 }
-
 function viewrform(){
     document.getElementById("ref").innerHTML="See Reviews";
     $("#sdview").hide();
     $("#mviews").hide();$("#rvform").show();
-
 }
-
 function delrvcomment(label){
     var list=document.getElementsByClassName("delcombtn");
     list = [].slice.call(list); 
@@ -69,7 +62,6 @@ function delrvcomment(label){
            dataType: "jsonp"
          });
   }
-
   function ctrlqcmntdel(e){
     showreviews();
 }
