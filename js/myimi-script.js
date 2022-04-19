@@ -69,6 +69,7 @@ if (user != "") {
       motoad.value= locksee;
       show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
       document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+   
     } 
    }
 }     
@@ -144,6 +145,7 @@ function switchvisitor(label){
 
       
    function show_wall(locksee) {
+        document.getElementById("entry.2036725465").value = locksee;
         jQuery('.hrstyle').hide();
         jQuery("#YoutubeOne").empty();
         jQuery("#News1").empty();
