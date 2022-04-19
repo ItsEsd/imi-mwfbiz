@@ -1291,3 +1291,30 @@ footer{
   }
 
 }
+
+.delcombtn{
+  margin-top:0px;
+  margin-right:0px;
+ font-size: 12px;
+ width:140px;
+ padding:4px 10px;
+ display:none;
+ border:0px;
+ background-color: white;
+ color:#282bf1;
+ border-radius: 0px;
+}
+
+.delcombtn:disabled{
+  background-color: white;
+  color:#161616;
+}
+.delcombtn:active,.delcombtn:focus{
+  outline: none;
+}
+
+.delcombtn svg{
+width:14px;
+height:14px;
+margin-top:-4px;
+}
