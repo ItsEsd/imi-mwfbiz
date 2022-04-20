@@ -1191,8 +1191,12 @@ border-radius: 80%;
 background-color: #807e7e;
 }
 .motocontit{
+  max-height:100px;
+  overflow-y:auto;
+  max-width:240px;
 float:right;
-font-size: 20px;
+font-size: 14px;
+font-weight:400;
 color: #161616;
 }
 
