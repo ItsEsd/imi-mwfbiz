@@ -203,9 +203,23 @@ else if(res[0].GIFGifts!=''){
   var news = JSON.parse(res[0].imiNews);
   var s = news.newsTitle.length;
   //var n = Math.floor((Math.random() * s - 1) + 1);
-  var n;
-  for (n=0;n<=s-1;n++) {
-    document.getElementById("News1").innerHTML += '<div class="swiper-slide"><div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[n] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[n] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[n] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[n] + '<a target="_blank" class="readmore" href="' + news.conLink1[n] + '">' + news.conSiteName1[n] + '</a> </p> <hr> <p>' + news.conTitle2[n] + '<a target="_blank" class="readmore" href="' + news.conLink2[n] + '">' + news.conSiteName2[n] + '</a></p> </div> </div> </div> </div></div>';
+  //var n;
+  for (var a=[],i=0;i<s;++i) a[i]=i;
+  function shuffle(array) {
+    var tmp, current, top = array.length;
+    if(top) while(--top) {
+      current = Math.floor(Math.random() * (top + 1));
+      tmp = array[current];
+      array[current] = array[top];
+      array[top] = tmp;
+    }
+    return array;
+  }
+  a = shuffle(a);
+  var fin;
+  for(var d=0;d<a.length;d++){
+    fin = a[d];
+    document.getElementById("News1").innerHTML += '<div class="swiper-slide"><div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[fin] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[fin] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[fin] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[fin] + '<a target="_blank" class="readmore" href="' + news.conLink1[fin] + '">' + news.conSiteName1[fin] + '</a> </p> <hr> <p>' + news.conTitle2[fin] + '<a target="_blank" class="readmore" href="' + news.conLink2[fin] + '">' + news.conSiteName2[fin] + '</a></p> </div> </div> </div> </div></div>';
  }
   var y = Math.floor((Math.random() * 6) + 1);
   var quotes = JSON.parse(res[0].HayQuotes);
@@ -369,10 +383,24 @@ var s, j;
 var news = JSON.parse(res[0].imiNews);
 var s = news.newsTitle.length;
 //var n = Math.floor((Math.random() * s - 1) + 1);
-var n;
-  for (n=0;n<=s-1;n++) {
-document.getElementById("News1").innerHTML += '<div class="swiper-slide"><div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[n] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[n] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[n] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[n] + '<a target="_blank" class="readmore" href="' + news.conLink1[n] + '">' + news.conSiteName1[n] + '</a> </p> <hr> <p>' + news.conTitle2[n] + '<a target="_blank" class="readmore" href="' + news.conLink2[n] + '">' + news.conSiteName2[n] + '</a></p> </div> </div> </div> </div></div>';
+//var n;
+for (var a=[],i=0;i<s;++i) a[i]=i;
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if(top) while(--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
   }
+  return array;
+}
+a = shuffle(a);
+var fin;
+for(var d=0;d<a.length;d++){
+  fin = a[d];
+  document.getElementById("News1").innerHTML += '<div class="swiper-slide"><div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[fin] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[fin] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[fin] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[fin] + '<a target="_blank" class="readmore" href="' + news.conLink1[fin] + '">' + news.conSiteName1[fin] + '</a> </p> <hr> <p>' + news.conTitle2[fin] + '<a target="_blank" class="readmore" href="' + news.conLink2[fin] + '">' + news.conSiteName2[fin] + '</a></p> </div> </div> </div> </div></div>';
+}
 var y = Math.floor((Math.random() * 6) + 1);
 var quotes = JSON.parse(res[0].HayQuotes);
 var bio = (res[0].Bio2).split(';');
