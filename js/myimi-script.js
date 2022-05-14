@@ -54,6 +54,7 @@ var elSetCookie = function(sessexp,uid) {
 var user = elGetCookie("_ybizc0"); 
 var usergu = elGetCookie("_ybizv0"); 
 var userel = elGetCookie("_ybize0"); 
+var usermi = elGetCookie("_ybizm0");
 if (user != "") {
 
   var decodedCookie = decodeURIComponent(document.cookie); 
@@ -109,7 +110,22 @@ else if(usergu != ""){
    // document.getElementById('sigcontainerimi').style.top = "24%";
   },3600000);
 }
-
+else if(usermi!=""){
+  var locksee = "bizbebpi85gkgfhd4g58ld01n";
+  var motoad = document.getElementById('entry.2036725465');
+  motoad.value= locksee;
+  show_wallV(locksee);     
+/*  setTimeout(function(e) {
+    rzp1.open();
+    e.preventDefault();
+  },60000);*/
+  setTimeout(function(){
+    document.getElementById('showhtml').style.filter = "blur(4px)";
+    document.getElementById('falsebacksigup').style.display = "block";
+    document.getElementById('sigcontainerimi').style.display = "block";
+   // document.getElementById('sigcontainerimi').style.top = "24%";
+  },3600000);
+}
 else if(userel !=""){
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
