@@ -345,7 +345,7 @@ var userSetCookie = function(exdays,uid) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toUTCString();
-  document.cookie = "_ybizv0="+uid+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
+  document.cookie = "_ybizm0="+uid+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
 };
 
 function userGetCookie(cname) {
