@@ -967,7 +967,7 @@ background-color: rgba(253, 43, 43, 0.658);
       position: fixed;
       background-color: #4d0606;
     
-      z-index: 0;
+      z-index: 1;
     }
     .closerv{
     float:right;
