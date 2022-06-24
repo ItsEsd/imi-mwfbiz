@@ -255,7 +255,7 @@ else if(res[0].GIFGifts!=''){
 var motostr = res[0].ADMIINMotto;
 var motocon = motostr.split('{biz}');
 document.getElementById('motoincon').style.display = 'block';
-  document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><div class="motocontit">'+motocon[1]+'</div></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
+  document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><div class="motocontit">'+unescape(motocon[1])+'</div></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
   document.getElementById("loader_wall").style.display = "none";
   document.getElementById("guru_eye").style.display = "none";
  
