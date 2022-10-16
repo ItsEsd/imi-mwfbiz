@@ -223,7 +223,6 @@ register.addEventListener('submit', (event) => {
         method: "GET",
         dataType: "jsonp"
       });
-   //   console.log(url);
      
   }
 
@@ -269,8 +268,6 @@ function ctrlqretrn(e){
       jQuery("#re").css("visibility", "hidden");
     document.getElementById("loader").style.visibility = "visible";
     jQuery('#mySpinner').addClass('spinner');
-  //  document.getElementById("id03").style.display = "block";
-  //  document.getElementById("id02").style.display = "none";
     document.getElementById('reg').disabled = false;
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
     var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
