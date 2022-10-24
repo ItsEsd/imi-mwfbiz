@@ -387,7 +387,6 @@ var m = Math.floor((Math.random() * k - 1) + 1);
 
 var link = VID.imiYouVid[m];
 var vidid = getId(link);
-//  console.log(vidid);
 document.getElementById("YoutubeOne").innerHTML = '<div class="iteam-2"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
 
 /*
