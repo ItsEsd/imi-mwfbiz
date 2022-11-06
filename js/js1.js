@@ -317,7 +317,7 @@ function ctrlsign(e){
   if(res!="ID not found!"){
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
     var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
-    var exdays = 1;
+    var exdays = 7;
     userSetCookie(exdays,uid);
     location.reload();
   }
