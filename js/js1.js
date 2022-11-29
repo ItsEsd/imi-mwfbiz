@@ -186,7 +186,7 @@ register.addEventListener('submit', (event) => {
       "key": "rzp_live_zeJJQym7llbiEc",
       "amount": "19900",
       "currency": "INR",
-      "name": "M W F BIZ - Check Out",
+      "name": "mwfbiz.COM - Check Out",
       "image": "../image/imgicon.gif",
       "callback_url": "https://mwfbiz.com/privacy-policy/",
       "handler": function(response) {
