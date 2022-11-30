@@ -8,7 +8,6 @@ function showreviews(lksee){
     document.getElementById('mviews').style.display="block";
     if(lksee ==undefined){
         var lksee = document.getElementById("entry.2036725465").value;
-        console.log(lksee);
     }
 var countcmnt = "n";
 var ur1="https://script.google.com/macros/s/";
@@ -31,13 +30,10 @@ document.getElementById('commentInbox').innerHTML +="<div class='reviewelm'><p c
      document.getElementById('loader-rv').style.display="none";
      var user = elGetCookie("_ybizc0"); 
      var userv = elGetCookie("_ybizv0"); 
-     console.log(user);
      var uid = function(){
         var pid =  user.split('.');
-        console.log(pid[1]);
         return window.atob(pid[1]);
      }
-     console.log(uid(),lksee);
      var rkey="bizbebpi85gkgfhd4g58ld01n";
      if(userv!="" && lksee ==rkey){
         $('.delcombtn').hide();
@@ -68,12 +64,10 @@ function delrvcomment(label){
     list[posofinput].disabled = true;
     var x = document.getElementsByClassName('rvcmntid');
          var cmntid = x[posofinput].value;
-         console.log(cmntid);
          var ur1="https://script.google.com/macros/s/";
          var ur2="AKfycbzxxs9rYu1E8dbAljk38i5XIjj_73bpGGDo-r_tt1xVtXy4cnkvLwoKiAeagYulqOKQjQ";
          var urcmt_ = ur1+ur2 +"/exec"
          var url = urcmt_ + "?callback=ctrlqcmntdel&comntid=" + cmntid + "&action=delcomnt";
-         console.log(url);
          var request = jQuery.ajax({
            crossDomain: true,
            url: url,
