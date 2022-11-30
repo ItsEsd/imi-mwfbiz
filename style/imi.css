@@ -889,6 +889,7 @@ background-color: rgba(253, 43, 43, 0.658);
     text-align: left;
     background-color: #ffffffcb;
     z-index: 1000;
+    overflow-y: auto;
   }
 .norevwyt{
   padding-top:160px;
@@ -936,7 +937,8 @@ background-color: rgba(253, 43, 43, 0.658);
     #rvbtn{
       float:right;
       height:60px;
-      width:200px;
+      width:300px;
+      padding:0px 20px;
       border-radius: 50px;
       font-size:20px;
       background-color: #4819a0;
@@ -956,7 +958,6 @@ background-color: rgba(253, 43, 43, 0.658);
       height:100%;
       position: fixed;
       background-color: #5e0c0c7a;
-      overflow-y: auto;
       z-index: 1;
     }
     .closerv{
