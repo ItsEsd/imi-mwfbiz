@@ -53,7 +53,7 @@ else{
 });
 }
 function viewrform(){
-    document.getElementById("ref").innerHTML="See Comments";
+    document.getElementById("ref").innerHTML='See Comments<i class="fa fa-comments" style="margin-left:10px;font-size:20px;"></i>';
     $("#sdview").hide();
     $("#mviews").hide();$("#rvform").show();
 }
