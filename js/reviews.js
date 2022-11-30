@@ -8,6 +8,7 @@ function showreviews(lksee){
     document.getElementById('mviews').style.display="block";
     if(lksee ==undefined){
         var lksee = document.getElementById("entry.2036725465").value;
+        console.log(lksee);
     }
 var countcmnt = "n";
 var ur1="https://script.google.com/macros/s/";
@@ -29,11 +30,29 @@ document.getElementById('commentInbox').innerHTML +="<div class='reviewelm'><p c
      }
      document.getElementById('loader-rv').style.display="none";
      var user = elGetCookie("_ybizc0"); 
-     if(user != "" && lksee !="bizbebpi85gkgfhd4g58ld01n"){
-         $('.delcombtn').show();
+     var userv = elGetCookie("_ybizv0"); 
+     console.log(user);
+     var uid = function(){
+        var pid =  user.split('.');
+        console.log(pid[1]);
+        return window.atob(pid[1]);
+     }
+     console.log(uid(),lksee);
+     var rkey="bizbebpi85gkgfhd4g58ld01n";
+     if(userv!="" && lksee ==rkey){
+        $('.delcombtn').hide();
+     }
+     else if(user != ""){
+if(uid() != lksee){
+    $('.delcombtn').hide();
+}
+else{
+    $('.delcombtn').show();
+}
+
      }
     else{
-    return false;
+        $('.delcombtn').hide();
        }
 });
 }
