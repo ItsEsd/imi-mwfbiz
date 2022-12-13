@@ -80,6 +80,7 @@ if (user != "") {
   show_wall(locksee);
   setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
+    document.getElementById('showhtml').innerHTML = "";
     document.getElementById('falsebacksigup').style.display = "block";
     document.getElementById('sigcontainerimi').style.display = "block";
     document.getElementById('exclvoffer').style.display = "none";
@@ -99,31 +100,21 @@ else if(usergu != ""){
   var motoad = document.getElementById('entry.2036725465');
   motoad.value= locksee;
   show_wallV(locksee);     
-/*  setTimeout(function(e) {
-    rzp1.open();
-    e.preventDefault();
-  },60000);*/
   setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
-    document.getElementById('falsebacksigup').style.display = "block";
-    document.getElementById('sigcontainerimi').style.display = "block";
-   // document.getElementById('sigcontainerimi').style.top = "24%";
-  },3600000);
+    document.getElementById('showhtml').innerHTML = "";
+   $('#falsebacksigup,#sigcontainerimi').fadeIn();
+  },900000);
 }
 else if(usermi!=""){
   var locksee = "bizbebpi85gkgfhd4g58ld01n";
   var motoad = document.getElementById('entry.2036725465');
   motoad.value= locksee;
   show_wallV(locksee);     
-/*  setTimeout(function(e) {
-    rzp1.open();
-    e.preventDefault();
-  },60000);*/
   setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
-    document.getElementById('falsebacksigup').style.display = "block";
-    document.getElementById('sigcontainerimi').style.display = "block";
-   // document.getElementById('sigcontainerimi').style.top = "24%";
+    document.getElementById('showhtml').innerHTML = "";
+   $('#falsebacksigup,#sigcontainerimi').fadeIn();
   },3600000);
 }
 else if(userel !=""){
@@ -142,10 +133,7 @@ else if(userel !=""){
         document.getElementById("switchtovisit").style.display = "block";
         document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
       } 
-    
    }
-  
-
 }
 
 function switchvisitor(label){
@@ -153,13 +141,10 @@ function switchvisitor(label){
     show_wallV(vistr); document.getElementById("entry.2036725465").value = vistr;
     setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
-    document.getElementById('falsebacksigup').style.display = "block";
-    document.getElementById('sigcontainerimi').style.display = "block";
-   // document.getElementById('sigcontainerimi').style.top = "24%";
+    document.getElementById('showhtml').innerHTML = "";
+   $('#falsebacksigup,#sigcontainerimi').fadeIn();
   },3600000);
 }
-
-
       
    function show_wall(locksee) {
         document.getElementById("entry.2036725465").value = locksee;
@@ -291,7 +276,6 @@ document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='S
             var cookie = cookies[i];
             var eqPos = cookie.indexOf("=");
             var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie; 
-          //  console.log(name);
      if(name != "imimwfoffrthus"){
       document.cookie = name + "=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";
       } 
@@ -331,8 +315,7 @@ function ctrlqelp(e) {
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
     var uid =k+"."+window.btoa(String(outp[0].UserRefId));
     elSetCookie(sessexp,uid);
-   // setTimeout(function(){ window.open('https://imi.mwfbiz.com', '_self');},500);
-   location.reload();
+    location.reload();
   }
 }
 
