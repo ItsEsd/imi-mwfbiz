@@ -1242,17 +1242,22 @@ cursor: pointer;
 
 .swiper-button-next{
   right:0 !important;
-  background-color: #0e0e0e;
-  color:#d61010b6!important;
+  color:#d14949 !important;
   padding-top:25px;padding-bottom:25px;
+  margin:5px;
+  padding:10px !important;
+  border-left:10px solid #505050;
+  font-weight:200;
 }
 
 .swiper-button-prev{
   left:0 !important;
-  background-color: #0e0e0e;
-  color:#d61010b6!important;
+  color:#e4e0e0 !important;
   padding-top:25px;padding-bottom:25px;
-
+  margin:5px;
+  padding:10px !important;
+  border-right:10px solid #d14949;
+  font-weight:200;
 }
 .swiper-button-next:hover,.swiper-button-prev:hover{
 opacity:0.8;
