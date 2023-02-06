@@ -116,6 +116,8 @@ else if(usermi!=""){
     document.getElementById('showhtml').innerHTML = "";
    $('#falsebacksigup,#sigcontainerimi').fadeIn();
   },3600000);
+  document.getElementById("switchtovisit").style.display = "block";
+  document.getElementById("switchtovisit").style.pointerEvents = "none";
 }
 else if(userel !=""){
     var decodedCookie = decodeURIComponent(document.cookie); 
@@ -365,19 +367,21 @@ jQuery('.hrstyle').show();
 var k, m;
 var VID = JSON.parse(res[0].YouVid);
 var k = VID.imiYouVid.length;
-
 var m = Math.floor((Math.random() * k - 1) + 1);
+var usermi = elGetCookie("_ybizm0");
+if(usermi!=""){
+  for (m = 0; m < k; m++) {
+    var link = VID.imiYouVid[m];
+    var vidid = getId(link);
+    document.getElementById("YoutubeOne").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
+    }
+}else{
+  var link = VID.imiYouVid[m];
+  var vidid = getId(link);
+  document.getElementById("YoutubeOne").innerHTML = '<div class="iteam-2"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
+  
+}
 
-var link = VID.imiYouVid[m];
-var vidid = getId(link);
-document.getElementById("YoutubeOne").innerHTML = '<div class="iteam-2"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-
-/*
-for (m = 0; m < k; m++) {
-var link = VID.imiYouVid[m];
-var vidid = getId(link);
-document.getElementById("YoutubeOne").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-}*/
 var s, j;
 var news = JSON.parse(res[0].imiNews);
 var s = news.newsTitle.length;
