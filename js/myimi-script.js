@@ -111,11 +111,6 @@ else if(usermi!=""){
   var motoad = document.getElementById('entry.2036725465');
   motoad.value= locksee;
   show_wallV(locksee);     
-  setTimeout(function(){
-    document.getElementById('showhtml').style.filter = "blur(4px)";
-    document.getElementById('showhtml').innerHTML = "";
-   $('#falsebacksigup,#sigcontainerimi').fadeIn();
-  },3600000);
   document.getElementById("switchtovisit").style.display = "block";
   document.getElementById("switchtovisit").style.pointerEvents = "none";
 }
