@@ -119,6 +119,15 @@ function myFunction() {
     x.type = "password";
   }
 }
+jQuery('#flnum').on('keyup', function() {
+  var x = document.getElementById("flnum");
+  var tstvl = x.value;
+  var spcl = tstvl.split('.');
+  if(spcl[1] !=""){
+    spcl[1] =="";
+    x.value = spcl[0];
+  }
+});
 jQuery('#password, #confirm_password').on('keyup', function() {
   if (jQuery('#password').val() == jQuery('#confirm_password').val()) {
     jQuery('#message').html('Matching').css('font-size', '12px');
@@ -138,12 +147,13 @@ jQuery('#confirm_passwordnew').on('keyup', function() {
   }
 });
 jQuery('#password').keyup(function(e) {
-  var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*jQuery", "g");
-  var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*jQuery", "g");
+  var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*", "g");
+  var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*", "g");
   var enoughRegex = new RegExp("(?=.{6,}).*", "g");
   if (false == enoughRegex.test(jQuery(this).val())) {
     jQuery('#passstrength').html('Too Short!');
     passstrength.style.display = "block";
+    document.getElementById('reg').disabled = true;
   } else if (strongRegex.test(jQuery(this).val())) {
     jQuery('#passstrength').className = 'ok';
     jQuery('#passstrength').html('Strong!');
@@ -157,23 +167,25 @@ jQuery('#password').keyup(function(e) {
   return true;
 });
 var ursc1 ="https://script.google.com/macros/s/";
-var ursc2= "AKfycbxOMxJNS6ngkoX9YthbRep3PWJGQb5dYe9eujpwcyqzvFzEnrzPvKIpqkGjV0To2CEW";
+var ursc2= "AKfycbww8VNxIZvI3e1Xs3uX5bHjFkBnTsfC07-s_OZ579HPNbecLTHKUzRxITVBuGSL2Khg";
 var usrc_ = ursc1 + ursc2+ "/exec";
 document.getElementById("reg").addEventListener("click", insertUser);
 
 function insertUser() {
+  var num = document.getElementById("flnum").value;
   var mail = document.getElementById("email").value;
   var dobday = document.getElementById("dobday").value;
   var dobmonth = document.getElementById("dobmonth").value;
   var dobyear = document.getElementById("dobyear").value;
   var country = document.getElementById("country").value;
   var password = document.getElementById("password").value;
-  if (mail == "" || dobday == "" || dobmonth == "" || dobyear == "" || country == "" || password) {
+  if (num=="" || mail == "" || dobday == "" || dobmonth == "" || dobyear == "" || country == "" || password) {
     return false;
   }
 }
 register.addEventListener('submit', (event) => {
   document.getElementById('reg').disabled = true;
+  var num = jQuery("#flnum").val();
   var email = jQuery("#email").val();
   var dobd = jQuery("#dobday").val();
   var dobm = jQuery("#dobmonth").val();
@@ -181,7 +193,7 @@ register.addEventListener('submit', (event) => {
   var row3 = jQuery("#country").val();
   var row4 = jQuery("#password").val();
   var row5 = jQuery("#dgen_p").val();
-  if(email !=0 &&  dobd!=0 && dobm !=0 &&  doby!=0 && row3 !=0 && row4 !=0 &&  row5!=0){
+  if(num !=0 && email !=0 &&  dobd!=0 && dobm !=0 &&  doby!=0 && row3 !=0 && row4 !=0 &&  row5!=0){
 /*  var optionsv = {
       "key": "rzp_live_zeJJQym7llbiEc",
       "amount": "19900",
@@ -205,7 +217,6 @@ register.addEventListener('submit', (event) => {
           method: "GET",
           dataType: "jsonp"
         });
-      // console.log(url);
       },
       "theme": {
         "color": "#dd1d16"
@@ -216,14 +227,13 @@ register.addEventListener('submit', (event) => {
     jQuery("#re").css("visibility", "hidden");
     document.getElementById("loader").style.visibility = "visible";
     jQuery('#mySpinner').addClass('spinner');
-      var url = usrc_ + "?callback=ctrlqretrn&email=" + email + "&dobday=" + dobd + "&dobmonth=" + dobm + "&dobyear=" + doby + "&country=" + row3 + "&password=" + row4 + "&dgen_p=" + row5 + "&action=chdhfjkhhkdhffndflsdfoirwl-fnfkmsdkflkdsfjsd8ffsdfdsf289432morprewr-rhktrktnhrhgnghchnghcreigre-4985ctirnhteriuthitvnerihrerer-ernvit5ytitv9y5tv5ntvmfjdfdfhfifnhnhfgrgmofgfdgdfgdf-dgmrgkfhgfdhgkfdvhgdfgeruigkhkdgdflgdf-gdfmgldfgkhdfgdfkghdgiudfygdfvidfnhgergrd-ggvdfnghdfhgyrtu9turmtreut9uer957654tmgf";
+      var url = usrc_ + "?callback=ctrlqretrn&email=" + email + "&mname=" + num +"&dobday=" + dobd + "&dobmonth=" + dobm + "&dobyear=" + doby + "&country=" + row3 + "&password=" + row4 + "&dgen_p=" + row5 + "&action=chdhfjkhhkdhffndflsdfoirwl-fnfkmsdkflkdsfjsd8ffsdfdsf289432morprewr-rhktrktnhrhgnghchnghcreigre-4985ctirnhteriuthitvnerihrerer-ernvit5ytitv9y5tv5ntvmfjdfdfhfifnhnhfgrgmofgfdgdfgdf-dgmrgkfhgfdhgkfdvhgdfgeruigkhkdgdflgdf-gdfmgldfgkhdfgdfkghdgiudfygdfvidfnhgergrd-ggvdfnghdfhgyrtu9turmtreut9uer957654tmgf";
       var request = jQuery.ajax({
         crossDomain: true,
         url: url,
         method: "GET",
         dataType: "jsonp"
       });
-     
   }
 
   else{
@@ -253,7 +263,6 @@ function ctrlqpcheck(e){
         method: "GET",
         dataType: "jsonp"
       });
-   //   console.log(url);
      
     document.getElementById("id03").style.display = "block";
     document.getElementById("id02").style.display = "none";
@@ -265,18 +274,20 @@ function ctrlqpcheck(e){
 function ctrlqretrn(e){
   var re = e.result;
     if(re=="Insertion successful!"){
+      deleteAllCookies();
       jQuery("#re").css("visibility", "hidden");
     document.getElementById("loader").style.visibility = "visible";
     jQuery('#mySpinner').addClass('spinner');
     document.getElementById('reg').disabled = false;
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
-    var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
+    var uid =window.btoa(String($("#country").val()))+"."+window.btoa(String($("#flnum").val()))+"."+window.btoa(String($("#email").val()))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
     var exdays = 1;
     userSetCookie(exdays,uid);
     location.reload();
     }
     else{
     document.getElementById('reg').disabled = false;
+    $('#message').html('User email exist. Please Sign In.');
     return false;
     }
 }
@@ -306,7 +317,6 @@ function verifyEmail() {
       method: "GET",
       dataType: "jsonp"
     });
- 
   } else {
     return false;
   }
@@ -315,8 +325,9 @@ function verifyEmail() {
 function ctrlsign(e){
   var res =e.records;
   if(res!="ID not found!"){
+    deleteAllCookies();
     var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
-    var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
+    var uid =window.btoa(String(res[0].Country))+"."+window.btoa(String(res[0].Name))+"."+window.btoa(String(res[0].Email))+"."+window.btoa(String("bizbebpi85gkgfhd4g58ld01n"));
     var exdays = 7;
     userSetCookie(exdays,uid);
     location.reload();
