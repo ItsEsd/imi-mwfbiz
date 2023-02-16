@@ -103,7 +103,9 @@
               </div>
             </div>
             <div class="container">
-              <div class="page" autocomplete="off"> <label class="field field_v3"> <input type="email" class="field__input" placeholder="e.g. example@xyz.abc" name="email" id="email" autocomplete="off"  required> <span class="field__label-wrap"> <span class="field__label"> <i class="fa fa-envelope" style="color:#DD1d16"></i> Email</span> </span> </label><span class="msg error">**Enter an email address</span> <span id="checkMail" style="display:none;">**This email address is already registered!</span> <label> <i class="fa fa-calendar" style="font-size:28px;"></i> Date of Birth</label> <label class="field field_v2"> <input type="number" id="dobday" list="day" name="dobday" class="field__input birthday-day" placeholder="**" required> <datalist id="day" required>
+              <div class="page" autocomplete="off"> 
+                <label class="field field_v3"> <input class="field__input" placeholder="Full Name" name="flname" id="flnum" autocomplete="off" style="text-transform: capitalize;" required> <span class="field__label-wrap"> <span class="field__label"> <i class="fa fa-user" style="color:#DD1d16"></i> Name</span> </span> </label>
+                <label class="field field_v3"> <input type="email" class="field__input" placeholder="e.g. example@xyz.abc" name="email" id="email" autocomplete="off"  required> <span class="field__label-wrap"> <span class="field__label"> <i class="fa fa-envelope" style="color:#DD1d16"></i> Email</span> </span> </label><span class="msg error">**Enter an email address</span> <span id="checkMail" style="display:none;">**This email address is already registered!</span> <label> <i class="fa fa-calendar" style="font-size:28px;"></i> Date of Birth</label> <label class="field field_v2"> <input type="number" id="dobday" list="day" name="dobday" class="field__input birthday-day" placeholder="**" required> <datalist id="day" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -493,7 +495,7 @@
                 <span class="field__label-wrap"> <span class="field__label"><i class="fa fa-exclamation-circle" style="color:#DD1d16"></i> Enter Passcode</span> </span> </label> <input type="text" name="pcheck" id="pcheck" value="**Incorrect Credential" disabled style="display:none;"> </div>
               <div align="center" style="width:80%; margin-top:0px; max-width:600px;" class="container" id="btnSign">
                 <button type="submit" id="sig">Log In</button>
-                <botton class="btn btn-dark" id="logbtnback" onclick="document.getElementById('id01').style.display='none';document.getElementById('guru_eye').style.display='block';" >Back</botton>
+                <button class="btn btn-dark" id="logbtnback" onclick="document.getElementById('id01').style.display='none';document.getElementById('guru_eye').style.display='block';" >Back</button>
                 <p><a style="text-decoration:none;" target="_parent" href="https://user-reset.mwfbiz.com/">Forgot Passcode?</a></p>
               </div>
               <div id="loader" class="spinner-border text-light"></div>
