@@ -99,7 +99,8 @@ else if(usergu != ""){
   var locksee = "bizbebpi85gkgfhd4g58ld01n";
   var motoad = document.getElementById('entry.2036725465');
   motoad.value= locksee;
-  show_wallV(locksee);     
+  // show_wallV(locksee);     
+  jQuery("#YoutubeOne,#News1,#GIF2,#Bio2").empty();
   setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
     document.getElementById('showhtml').innerHTML = "";
@@ -107,10 +108,24 @@ else if(usergu != ""){
   },900000);
 }
 else if(usermi!=""){
-  var locksee = "bizbebpi85gkgfhd4g58ld01n";
-  var motoad = document.getElementById('entry.2036725465');
-  motoad.value= locksee;
-  show_wallV(locksee);     
+  var decodedCookie = decodeURIComponent(document.cookie); 
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]; 
+    while (c.charAt(0) == ' ') { c = c.substring(1); 
+    } 
+    if (c.indexOf("_ybizm0") == 0) { 
+      var userelcook = c.substring(1).split('.');
+      var locksee = window.atob(userelcook[3]);
+      show_wall(locksee); 
+      var motoad = document.getElementById('entry.2036725465');
+      motoad.value= locksee;
+      document.getElementById('entry.1140798952').value=window.atob(userelcook[1]);
+      document.getElementById('entry.38856564').value=window.atob(userelcook[2]);
+      document.getElementById('entry.1140798952').disabled = true;
+      document.getElementById('entry.38856564').disabled = true;
+      } 
+ }
   document.getElementById("switchtovisit").style.display = "block";
   document.getElementById("switchtovisit").style.pointerEvents = "none";
 }
@@ -134,6 +149,7 @@ else if(userel !=""){
 }
 
 function switchvisitor(label){
+  document.getElementById('sdview').disabled=true;
   var vistr = "bizbebpi85gkgfhd4g58ld01n";
     show_wallV(vistr); document.getElementById("entry.2036725465").value = vistr;
     setTimeout(function(){
@@ -145,6 +161,7 @@ function switchvisitor(label){
       
    function show_wall(locksee) {
         document.getElementById("entry.2036725465").value = locksee;
+        document.getElementById('sdview').disabled=false;
         jQuery('.hrstyle').hide();
         jQuery("#YoutubeOne").empty();
         jQuery("#News1").empty();
@@ -306,6 +323,7 @@ function enteringelop() {
 function ctrlqelp(e) {
   var outp = e.result;
   if (outp != "Pass not found!") {
+    deleteAllCookies();
     var sessexp = outp[0].SessionExpireDT;
     var elkey = outp[0].UserRefId;
     document.getElementById('refobdm').value= elkey;
