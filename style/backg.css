@@ -6,9 +6,9 @@
     height: 100%;
     font-weight: 100;
     /* background: linear-gradient(180deg,#2e0202,#381c01,#3f3b02,#161616); */
-    background-image: url('../image/backcover.png');
-    background-size: 130% 150%;
-    background-position: 5% 5%;
+    background-image: url('../image/backimi-two.gif');
+    background-size: 50% 200%;
+    background-position: 0% 10%;
     -webkit-overflow-Y: hidden;
     -moz-overflow-Y: hidden;
     -o-overflow-Y: hidden;
