@@ -138,7 +138,7 @@ else if(userel !=""){
       while (c.charAt(0) == ' ') { c = c.substring(1); 
       } 
       if (c.indexOf("_ybize0") == 0) { 
-        var userelcook = c.substring(1).split('.');console.log(window.atob(userelcook[0].split('ybize0=')[1]));
+        var userelcook = c.substring(1).split('.');
         if(window.atob(userelcook[0].split('ybize0=')[1]) =="ELITE"){
           var locksee = window.atob(userelcook[1]);
           show_wall(locksee); 
