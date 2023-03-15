@@ -65,12 +65,13 @@ if (user != "") {
     } 
     if (c.indexOf("_ybizc0") == 0) { 
       var userelcook = c.substring(1).split('.');
-      var locksee = window.atob(userelcook[1]);
-      var motoad = document.getElementById('entry.2036725465');
-      motoad.value= locksee;
-      show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
-      document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
-   
+      if(window.atob(userelcook[0].split('ybizc0=')[1]) =="BIZADMN" && window.atob(userelcook[2]) =="valid"){
+        var locksee = window.atob(userelcook[1]);
+        var motoad = document.getElementById('entry.2036725465');
+        motoad.value= locksee;
+        show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
+        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+      }
     } 
    }
 }     
@@ -137,14 +138,16 @@ else if(userel !=""){
       while (c.charAt(0) == ' ') { c = c.substring(1); 
       } 
       if (c.indexOf("_ybize0") == 0) { 
-        var userelcook = c.substring(1).split('.');
-        var locksee = window.atob(userelcook[1]);
-        show_wall(locksee); 
-        var motoad = document.getElementById('entry.2036725465');
-        motoad.value= locksee;
-        document.getElementById("switchtovisit").style.display = "block";
-        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
-      } 
+        var userelcook = c.substring(1).split('.');console.log(window.atob(userelcook[0].split('ybize0=')[1]));
+        if(window.atob(userelcook[0].split('ybize0=')[1]) =="ELITE"){
+          var locksee = window.atob(userelcook[1]);
+          show_wall(locksee); 
+          var motoad = document.getElementById('entry.2036725465');
+          motoad.value= locksee;
+          document.getElementById("switchtovisit").style.display = "block";
+          document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+        }
+         } 
    }
 }
 
@@ -327,8 +330,7 @@ function ctrlqelp(e) {
     var sessexp = outp[0].SessionExpireDT;
     var elkey = outp[0].UserRefId;
     document.getElementById('refobdm').value= elkey;
-    var k = Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
-    var uid =k+"."+window.btoa(String(outp[0].UserRefId));
+    var uid =window.btoa(String('ELITE'))+"."+window.btoa(String(outp[0].UserRefId));
     elSetCookie(sessexp,uid);
     location.reload();
   }
