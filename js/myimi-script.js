@@ -69,7 +69,7 @@ if (user != "") {
       var motoad = document.getElementById('entry.2036725465');
       motoad.value= locksee;
       show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
-      document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+      document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
    
     } 
    }
@@ -143,7 +143,7 @@ else if(userel !=""){
         var motoad = document.getElementById('entry.2036725465');
         motoad.value= locksee;
         document.getElementById("switchtovisit").style.display = "block";
-        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
       } 
    }
 }
@@ -265,7 +265,7 @@ else{
   document.getElementById("GIF2").innerHTML =
   '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
-document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
   }
       function getId(url) {
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
