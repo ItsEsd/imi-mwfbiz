@@ -70,7 +70,7 @@ if (user != "") {
         var motoad = document.getElementById('entry.2036725465');
         motoad.value= locksee;
         show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
-        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
       }
     } 
    }
@@ -100,13 +100,15 @@ else if(usergu != ""){
   var locksee = "bizbebpi85gkgfhd4g58ld01n";
   var motoad = document.getElementById('entry.2036725465');
   motoad.value= locksee;
-  // show_wallV(locksee);     
+  show_wallV(locksee);     
   jQuery("#YoutubeOne,#News1,#GIF2,#Bio2").empty();
   setTimeout(function(){
     document.getElementById('showhtml').style.filter = "blur(4px)";
     document.getElementById('showhtml').innerHTML = "";
    $('#falsebacksigup,#sigcontainerimi').fadeIn();
   },900000);
+  document.getElementById('submitview').disabled = true;
+  document.getElementById('submitview').style.cursor = 'not-allowed';
 }
 else if(usermi!=""){
   var decodedCookie = decodeURIComponent(document.cookie); 
@@ -145,7 +147,7 @@ else if(userel !=""){
           var motoad = document.getElementById('entry.2036725465');
           motoad.value= locksee;
           document.getElementById("switchtovisit").style.display = "block";
-          document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+          document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
         }
          } 
    }
@@ -186,6 +188,33 @@ function switchvisitor(label){
           dataType: "jsonp"
         });
         showreviews(locksee);
+
+      }
+      function show_wallEd() {
+        var edlksee = 'bizeditor18qkh983motto821i0';
+        document.getElementById("entry.2036725465").value = edlksee;
+        document.getElementById('sdview').disabled=false;
+        jQuery('.hrstyle').hide();
+        jQuery("#YoutubeOne").empty();
+        jQuery("#News1").empty();
+        jQuery("#GIF2").empty();
+        jQuery("#Bio2").empty();
+        document.getElementById("guru_eye").style.display = "none";
+        document.getElementById("id01").style.display = "none";
+        document.getElementById("id03").style.display = "none";
+        document.getElementById("loader_wall").style.display = "block";
+        document.getElementById("showhtml").style.display = "block";
+        var obdm_mi1 = "https://script.google.com/macros/s/";
+        var obdm_mi2 ='AKfycbxMB_CVJADYxgJnvRaivKZhzXsG6gUhiPW1qYJqfvSrMS1GYtrmZDaemUzz8AUDoeLV'
+        var obdm_mi = obdm_mi1 + obdm_mi2+ "/exec";
+        var urlm = obdm_mi + "?callback=ctrlqobdm&usid="+edlksee+"&action=rdobdm";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: urlm,
+          method: "GET",
+          dataType: "jsonp"
+        });
+        showreviews(edlksee);
 
       }
 function ctrlqobdm(e){
@@ -268,7 +297,7 @@ else{
   document.getElementById("GIF2").innerHTML =
   '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
-document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
   }
       function getId(url) {
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -446,8 +475,8 @@ else{
 document.getElementById("GIF2").innerHTML =
 '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
-
-document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='Switch to Elite' onclick='show_wall(locksee);'>&#10064;</a>";
+document.getElementById("switchtovisit").style.display = "block";
+document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallEd();'>&#10064;</a>";
 
 }
 function getId(url) {
