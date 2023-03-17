@@ -812,3 +812,12 @@
   color:grey;
   border:1px solid grey;
   }
+
+  #signupimi{
+    float:right;
+    font-size: 12px;
+    background-color: transparent;
+    border:0px;
+    margin:0px;
+    border-bottom: 1px dashed white;
+  }
