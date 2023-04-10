@@ -339,7 +339,7 @@ function enteringelop() {
     $('#promodiv').fadeIn('slow');
     document.getElementById('promodiv').style.height = '100%';
     var ur1 = 'https://script.google.com/macros/s/';
-    var ur2 = 'AKfycbypYCXSfkW3wv7wuflnf_bZCX0HYl2sKSIQaqxp7LAnb97sUlHGPEsLT4PMHdsPpoxy';
+    var ur2 = 'AKfycbxLpTl0uEgh8Y4PY9k_wPp7afNz3kogMQDTv6D-WSFW1Z_fVyswlMk1bU-pJ6NGy71N';
     var url = ur1 + ur2 + '/exec' + '?callback=ctrlqelp&elpass=' + elop + '&action=chelite';
     var request = jQuery.ajax({
       crossDomain: true,
