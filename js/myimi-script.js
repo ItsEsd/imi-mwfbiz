@@ -215,7 +215,6 @@ function switchvisitor(label){
           dataType: "jsonp"
         });
         showreviews(edlksee);
-
       }
 function ctrlqobdm(e){
 var res = e.result;
@@ -224,6 +223,15 @@ if(res ==='Set Motto!'){
 '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
 else if(res[0].GIFGifts!=''){
+  var userel = elGetCookie("_ybize0"); 
+  if(userel!="" && res[0].RestrictElt =="Restricted"){
+    document.body.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
+    document.body.style.backgroundImage="url('../image/meta.gif')";
+    document.body.style.backgroundSize="100% 100%";
+    document.body.style.backgroundRepeat="no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    deleteAllCookies();
+  }
   var g = Math.floor((Math.random() * 6) + 1);
   var gifts = JSON.parse(res[0].GIFGifts);
 //    for (prop in json.records[g]) {
@@ -334,7 +342,7 @@ function enteringelop() {
     $('#promodiv').fadeIn('slow');
     document.getElementById('promodiv').style.height = '100%';
     var ur1 = 'https://script.google.com/macros/s/';
-    var ur2 = 'AKfycbxLpTl0uEgh8Y4PY9k_wPp7afNz3kogMQDTv6D-WSFW1Z_fVyswlMk1bU-pJ6NGy71N';
+    var ur2 = 'AKfycbyXc4fYfTpBu5Fo371PeG4IxAVcOi3Zd_TxbAoku2-QkJEVdOh-nHk5oOrALw13E2J7';
     var url = ur1 + ur2 + '/exec' + '?callback=ctrlqelp&elpass=' + elop + '&action=chelite';
     var request = jQuery.ajax({
       crossDomain: true,
