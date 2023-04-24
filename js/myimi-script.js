@@ -94,8 +94,7 @@ else if(userclmofr != ""){
    window.open("../", "_self");
   },365000);
 
-}*/
-
+}
 else if(usergu != ""){
   var locksee = "bizbebpi85gkgfhd4g58ld01n";
   var motoad = document.getElementById('entry.2036725465');
@@ -109,7 +108,7 @@ else if(usergu != ""){
   },900000);
   document.getElementById('submitview').disabled = true;
   document.getElementById('submitview').style.cursor = 'not-allowed';
-}
+}*/
 else if(usermi!=""){
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
