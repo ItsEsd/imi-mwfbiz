@@ -254,7 +254,7 @@ else if(res[0].GIFGifts!=''){
     document.body.style.backgroundSize="100% 100%";
     document.body.style.backgroundRepeat="no-repeat";
     document.body.style.backgroundAttachment = "fixed";
-    deleteAllCookies();  
+    // deleteAllCookies();  
   }
   var g = Math.floor((Math.random() * 6) + 1);
   var gifts = JSON.parse(res[0].GIFGifts);
