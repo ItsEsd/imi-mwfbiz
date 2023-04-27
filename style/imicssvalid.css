@@ -1,8 +1,10 @@
   body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #161616;
+  background: #161616 !important;
   overflow-x: hidden;
   min-height: 400px;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
   }
 
   #lds-spinner {
