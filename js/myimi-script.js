@@ -69,8 +69,12 @@ if (user != "") {
         var locksee = window.atob(userelcook[1]);
         var motoad = document.getElementById('entry.2036725465');
         motoad.value= locksee;
+        var elem = document.createElement('input');
+        elem.id='edtrusd';
+        elem.value= locksee;
+        $('body').append(elem);
         show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
-        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
       }
     } 
    }
@@ -119,7 +123,7 @@ else if(usermi!=""){
     if (c.indexOf("_ybizm0") == 0) { 
       var userelcook = c.substring(1).split('.');
       var locksee = window.atob(userelcook[3]);
-      show_wall(locksee); 
+      show_wallV(locksee); 
       var motoad = document.getElementById('entry.2036725465');
       motoad.value= locksee;
       document.getElementById('entry.1140798952').value=window.atob(userelcook[1]);
@@ -129,6 +133,7 @@ else if(usermi!=""){
       } 
  }
   document.getElementById("switchtovisit").style.display = "block";
+  document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
 }
 else if(userel !=""){
     var decodedCookie = decodeURIComponent(document.cookie); 
@@ -142,10 +147,14 @@ else if(userel !=""){
         if(window.atob(userelcook[0].split('ybize0=')[1]) =="ELITE"){
           var locksee = window.atob(userelcook[1]);
           show_wall(locksee); 
+          var elem = document.createElement('input');
+          elem.id='edtrusd';
+          elem.value= locksee;
+          $('body').append(elem);
           var motoad = document.getElementById('entry.2036725465');
           motoad.value= locksee;
           document.getElementById("switchtovisit").style.display = "block";
-          document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+          document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
         }
          } 
    }
@@ -160,8 +169,24 @@ function switchvisitor(label){
     document.getElementById('showhtml').innerHTML = "";
    $('#falsebacksigup,#sigcontainerimi').fadeIn();
   },3600000);
+  if(usermi !=""){
+    document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
+  }
+  else if(userel !=""){
+    document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallEl();'>&#10064;</a>";
+  }
+  else if(user !=""){
+    document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallCl();'>&#10064;</a>";
+  }
 }
-      
+   function show_wallEl(){
+    var str = document.getElementById('edtrusd').value;
+    show_wall(str);
+   }   
+   function show_wallCl(){
+    var str = document.getElementById('edtrusd').value;
+    show_wall(str);
+   }  
    function show_wall(locksee) {
         document.getElementById("entry.2036725465").value = locksee;
         document.getElementById('sdview').disabled=false;
@@ -205,7 +230,7 @@ function switchvisitor(label){
         var obdm_mi1 = "https://script.google.com/macros/s/";
         var obdm_mi2 ='AKfycbxMB_CVJADYxgJnvRaivKZhzXsG6gUhiPW1qYJqfvSrMS1GYtrmZDaemUzz8AUDoeLV'
         var obdm_mi = obdm_mi1 + obdm_mi2+ "/exec";
-        var urlm = obdm_mi + "?callback=ctrlqobdm&usid="+edlksee+"&action=rdobdm";
+        var urlm = obdm_mi + "?callback=ctrlqobdmED&usid="+edlksee+"&action=rdobdm";
         var request = jQuery.ajax({
           crossDomain: true,
           url: urlm,
@@ -213,6 +238,7 @@ function switchvisitor(label){
           dataType: "jsonp"
         });
         showreviews(edlksee);
+        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
       }
 function ctrlqobdm(e){
 var res = e.result;
@@ -232,21 +258,12 @@ else if(res[0].GIFGifts!=''){
   }
   var g = Math.floor((Math.random() * 6) + 1);
   var gifts = JSON.parse(res[0].GIFGifts);
-//    for (prop in json.records[g]) {
     document.getElementById("GIF2").innerHTML = '<img frameborder="0" width="80%" style="max-width:400px;border-radius:4px;" src="' + gifts.GIFimi[g] + '">';
-//    }
   jQuery('.hrstyle').show();
   var k, m;
   var VID = JSON.parse(res[0].YouVid);
   var k = VID.imiYouVid.length;
- /*
-  var m = Math.floor((Math.random() * k - 1) + 1);
-
-    var link = VID.imiYouVid[m];
-    var vidid = getId(link);
-  //  console.log(vidid);
-    document.getElementById("YoutubeOne").innerHTML = '<div class="iteam-2"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-  */
+ 
   
   for (m = 0; m < k; m++) {
     var link = VID.imiYouVid[m];
@@ -256,8 +273,7 @@ else if(res[0].GIFGifts!=''){
   var s, j;
   var news = JSON.parse(res[0].imiNews);
   var s = news.newsTitle.length;
-  //var n = Math.floor((Math.random() * s - 1) + 1);
-  //var n;
+
   for (var a=[],i=0;i<s;++i) a[i]=i;
   function shuffle(array) {
     var tmp, current, top = array.length;
@@ -287,24 +303,100 @@ else if(res[0].GIFGifts!=''){
   else{
     document.getElementById("Bio2").innerHTML ='<div style="max-width:600px;"><p>' + quotes.Quoteimi[y] + '</p></div>';
   }
-//   for (prop in json.records[y]) {
-  //  document.getElementById("Bio2").innerHTML = '<div style="max-width:600px;"><h5 style="color:#DD1D16;"><b>' + bio[y] + '</b></h5><p>' + quotes.Quoteimi[y] + '</p></div>';
-//   }
+
 var motostr = res[0].ADMIINMotto;
 var motocon = motostr.split('{biz}');
 document.getElementById('motoincon').style.display = 'block';
   document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><div class="motocontit">'+unescape(motocon[1])+'</div></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
   document.getElementById("loader_wall").style.display = "none";
   document.getElementById("guru_eye").style.display = "none";
- 
- 
 }
 else{
   document.getElementById("GIF2").innerHTML =
   '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
-document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Visitor' onclick='switchvisitor(this)'>&#10064;</a>";
+
+  document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+}
+function ctrlqobdmED(e){
+  var res = e.result;
+  if(res ==='Set Motto!'){
+    document.getElementById("GIF2").innerHTML =
+  '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
   }
+  else if(res[0].GIFGifts!=''){
+    var userel = elGetCookie("_ybize0"); 
+    if(userel!="" && res[0].RestrictElt =="Restricted"){
+      document.body.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
+      document.body.style.backgroundImage="url('../image/meta.gif')";
+      document.body.style.backgroundSize="100% 100%";
+      document.body.style.backgroundRepeat="no-repeat";
+      document.body.style.backgroundAttachment = "fixed";
+      deleteAllCookies();  
+    }
+    var g = Math.floor((Math.random() * 6) + 1);
+    var gifts = JSON.parse(res[0].GIFGifts);
+      document.getElementById("GIF2").innerHTML = '<img frameborder="0" width="80%" style="max-width:400px;border-radius:4px;" src="' + gifts.GIFimi[g] + '">';
+    jQuery('.hrstyle').show();
+    var k, m;
+    var VID = JSON.parse(res[0].YouVid);
+    var k = VID.imiYouVid.length;
+
+    
+    for (m = 0; m < k; m++) {
+      var link = VID.imiYouVid[m];
+      var vidid = getId(link);
+      document.getElementById("YoutubeOne").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
+    }
+    var s, j;
+    var news = JSON.parse(res[0].imiNews);
+    var s = news.newsTitle.length;
+    for (var a=[],i=0;i<s;++i) a[i]=i;
+    function shuffle(array) {
+      var tmp, current, top = array.length;
+      if(top) while(--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+      }
+      return array;
+    }
+    a = shuffle(a);
+    var fin;
+    for(var d=0;d<a.length;d++){
+      fin = a[d];
+      document.getElementById("News1").innerHTML += '<div class="swiper-slide"><div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[fin] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[fin] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[fin] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[fin] + '<a target="_blank" class="readmore" href="' + news.conLink1[fin] + '">' + news.conSiteName1[fin] + '</a> </p> <hr> <p>' + news.conTitle2[fin] + '<a target="_blank" class="readmore" href="' + news.conLink2[fin] + '">' + news.conSiteName2[fin] + '</a></p> </div> </div> </div> </div></div>';
+   }
+    var y = Math.floor((Math.random() * 6) + 1);
+    var quotes = JSON.parse(res[0].HayQuotes);
+    var bio = (res[0].Bio2).split(';');
+    var biostrln = bio.length;
+    var kl = Math.floor((Math.random() * biostrln));
+    if(bio[kl] != ""){
+     
+      document.getElementById("Bio2").innerHTML = '<div style="max-width:600px;"><h5 style="color:#DD1D16;"><b>' + bio[kl] + '</b></h5><p>' + quotes.Quoteimi[y] + '</p></div>';
+    }
+    else{
+      document.getElementById("Bio2").innerHTML ='<div style="max-width:600px;"><p>' + quotes.Quoteimi[y] + '</p></div>';
+    }
+  
+  var motostr = res[0].ADMIINMotto;
+  var motocon = motostr.split('{biz}');
+  document.getElementById('motoincon').style.display = 'block';
+    document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><div class="motocontit">'+unescape(motocon[1])+'</div></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
+    document.getElementById("loader_wall").style.display = "none";
+    document.getElementById("guru_eye").style.display = "none";
+  }
+  else{
+    document.getElementById("GIF2").innerHTML =
+    '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
+  }
+  
+  document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+ 
+  }
+
       function getId(url) {
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
         var match = url.match(regExp);
@@ -429,8 +521,7 @@ if(usermi!=""){
 var s, j;
 var news = JSON.parse(res[0].imiNews);
 var s = news.newsTitle.length;
-//var n = Math.floor((Math.random() * s - 1) + 1);
-//var n;
+
 for (var a=[],i=0;i<s;++i) a[i]=i;
 function shuffle(array) {
   var tmp, current, top = array.length;
@@ -460,9 +551,7 @@ document.getElementById("Bio2").innerHTML = '<div style="max-width:600px;"><h5 s
 else{
 document.getElementById("Bio2").innerHTML ='<div style="max-width:600px;"><p>' + quotes.Quoteimi[y] + '</p></div>';
 }
-//   for (prop in json.records[y]) {
-//  document.getElementById("Bio2").innerHTML = '<div style="max-width:600px;"><h5 style="color:#DD1D16;"><b>' + bio[y] + '</b></h5><p>' + quotes.Quoteimi[y] + '</p></div>';
-//   }
+
 var motostr = res[0].ADMIINMotto;
 var motocon = motostr.split('{biz}');
 document.getElementById('motoincon').style.display = 'block';
@@ -475,8 +564,8 @@ else{
 document.getElementById("GIF2").innerHTML =
 '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
-document.getElementById("switchtovisit").style.display = "block";
-document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallEd();'>&#10064;</a>";
+// document.getElementById("switchtovisit").style.display = "block";
+// document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallEd();'>&#10064;</a>";
 
 }
 function getId(url) {
