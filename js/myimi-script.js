@@ -129,7 +129,6 @@ else if(usermi!=""){
       } 
  }
   document.getElementById("switchtovisit").style.display = "block";
-  document.getElementById("switchtovisit").style.pointerEvents = "none";
 }
 else if(userel !=""){
     var decodedCookie = decodeURIComponent(document.cookie); 
