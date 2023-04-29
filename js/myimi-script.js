@@ -248,6 +248,7 @@ if(res ==='Set Motto!'){
 }
 else if(res[0].GIFGifts!=''){
   var userel = elGetCookie("_ybize0"); 
+  var user = elGetCookie("_ybizc0"); 
   if(userel!="" && res[0].RestrictElt =="Restricted"){
     document.body.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
     document.body.style.backgroundImage="url('../image/meta.gif')";
@@ -255,6 +256,12 @@ else if(res[0].GIFGifts!=''){
     document.body.style.backgroundRepeat="no-repeat";
     document.body.style.backgroundAttachment = "fixed";
     // deleteAllCookies();  
+  }
+  else if(user !="" && res[0].RestrictElt =="Restricted"){
+    var crelm = document.createElement('div');
+    crelm.id="stsst";
+    crelm.innerHTML = '<center>Status: <span>RESTRICTED</span> | Edit: <a href="//admin.mwfbiz.com">Admin</a></center>';
+    $('body').append(crelm);
   }
   var g = Math.floor((Math.random() * 6) + 1);
   var gifts = JSON.parse(res[0].GIFGifts);
