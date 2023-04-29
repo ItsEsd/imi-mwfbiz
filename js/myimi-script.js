@@ -255,7 +255,7 @@ else if(res[0].GIFGifts!=''){
     document.body.style.backgroundSize="100% 100%";
     document.body.style.backgroundRepeat="no-repeat";
     document.body.style.backgroundAttachment = "fixed";
-    // deleteAllCookies();  
+    deleteAllCookies();  
   }
   else if(user !="" && res[0].RestrictElt =="Restricted"){
     var crelm = document.createElement('div');
