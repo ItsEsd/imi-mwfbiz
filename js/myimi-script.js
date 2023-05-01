@@ -112,6 +112,8 @@ else if(usergu != ""){
   },900000);
   document.getElementById('submitview').disabled = true;
   document.getElementById('submitview').style.cursor = 'not-allowed';
+  document.getElementById("switchtovisit").style.display = "block";
+  document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
 }
 else if(usermi!=""){
   var decodedCookie = decodeURIComponent(document.cookie); 
@@ -177,9 +179,6 @@ function switchvisitor(label){
   }
   else if(user !=""){
     document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallCl();'>&#10064;</a>";
-  }
-  else if(usergu !=""){
-    document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
   }
 }
    function show_wallEl(){
