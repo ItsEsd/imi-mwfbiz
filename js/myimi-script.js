@@ -180,6 +180,9 @@ function switchvisitor(label){
   else if(user !=""){
     document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='IMI - Editor' onclick='show_wallCl();'>&#10064;</a>";
   }
+  else if(usergu !=""){
+    document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
+  }
 }
    function show_wallEl(){
     var str = document.getElementById('edtrusd').value;
