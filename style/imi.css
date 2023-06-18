@@ -959,7 +959,7 @@ background-color: rgba(253, 43, 43, 0.658);
       height:100%;
       position: fixed;
       background-color: #5e0c0c7a;
-      z-index: 1;
+      z-index: 10000;
     }
     .closerv{
     float:right;
