@@ -929,4 +929,18 @@
   .collapsible.open .collapsible-icon {
     transform: rotate(180deg);
   }
-  
+  #rfshedtr a{
+    top:20px;
+    right:20px;
+    position: fixed;
+    color:white;
+    background-color: #2f2f2f;
+    cursor: pointer;
+    z-index: 20000;
+    padding:5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+  }
+  #rfshedtr :hover{
+    background-color: #161616;
+  }
