@@ -78,6 +78,50 @@ if (user != "") {
       }
     } 
    }
+   if(userel !=""){
+  var decodedCookie2 = decodeURIComponent(document.cookie); 
+    var ca = decodedCookie2.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i]; 
+      while (c.charAt(0) == ' ') { c = c.substring(1); 
+      } 
+      if (c.indexOf("_ybize0") == 0) { 
+        var userelcook2 = c.substring(1).split('.');
+        if(window.atob(userelcook2[0].split('ybize0=')[1]) =="ELITE"){
+          var locksee = window.atob(userelcook2[1]);
+          var elem = document.createElement('input');
+          elem.id='edtrusd';
+          elem.value= locksee;
+          $('body').append(elem);
+          var motoad = document.getElementById('entry.2036725465');
+          motoad.value= locksee;
+          var eltckln = userelcook2.length;
+          for (var elk = 2; elk <= eltckln; elk += 3) {
+            var ssnxp = compareDates(window.atob(userelcook2[elk+1])); 
+            if(ssnxp==false){
+            var elck = document.createElement('div');
+            elck.className = 'alleltdiv';
+            var img = document.createElement('img');
+            img.className = 'eltckon';
+            img.src = window.atob(userelcook2[elk]);
+            img.style.cursor = 'pointer';
+            elck.onclick = function() {
+              seteltmn(this);
+            };
+            var input1 = document.createElement('input');
+            input1.className = 'elckud';
+            input1.style.display = 'none';
+            input1.value = window.atob(userelcook2[elk - 1]);
+            var input2 = document.createElement('input');
+            input2.className = 'elcksxp';
+            input2.style.display = 'none';
+            input2.value = window.atob(userelcook2[elk + 1]);
+            elck.appendChild(img);
+            elck.appendChild(input1);
+            elck.appendChild(input2);
+            document.querySelector('#elcondiv').appendChild(elck);
+          } } } } 
+   }}
 }     
 
 /*   else if(offrclaimed !="" && usergu != ""){
@@ -568,7 +612,7 @@ function enteringelop() {
   var elop = String($('#elpassop').val());
   var oplen = elop.length;
   if (oplen == 11) {
-    if(userel =="" && usermi ==""){
+    if(userel =="" && usermi ==""  && user ==""){
       $('#promodiv').fadeIn('slow');
       document.getElementById('promodiv').style.height = '100%';
     }
@@ -596,6 +640,7 @@ function ctrlqelp(e) {
     var psd= window.btoa(ftchpic[0]);
 
     var userel = elGetCookie("_ybize0"); 
+    var user = elGetCookie("_ybizc0"); 
     
     if(userel !=""){
       var cklen = userel.split('.');
@@ -621,8 +666,10 @@ function ctrlqelp(e) {
       var uid =window.btoa(String('ELITE'))+"."+window.btoa(String(outp[0].UserRefId))+"."+window.btoa(ftchpic[0])+"."+ window.btoa(sessexp);
       elSetCookie(sessexp,uid); 
       if(userel ==""){
-        location.reload();
-      }
+        if(user !=""){
+          $('#elcondiv').empty(); reldelts();
+        }else{location.reload();
+      }}
     }
   }
 }
