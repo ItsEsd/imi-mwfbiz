@@ -55,7 +55,7 @@ var user = elGetCookie("_ybizc0");
 var usergu = elGetCookie("_ybizv0"); 
 var userel = elGetCookie("_ybize0"); 
 var usermi = elGetCookie("_ybizm0");
-if (user != "") {
+if (user != "" && userel =="") {
 
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
@@ -78,51 +78,74 @@ if (user != "") {
       }
     } 
    }
-   if(userel !=""){
+} 
+
+else if(user != "" && userel !=""){
+  var decodedCookie = decodeURIComponent(document.cookie); 
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]; 
+    while (c.charAt(0) == ' ') { c = c.substring(1); 
+    } 
+    if (c.indexOf("_ybizc0") == 0) { 
+      var userelcook = c.substring(1).split('.');
+      if(window.atob(userelcook[0].split('ybizc0=')[1]) =="BIZADMN" && window.atob(userelcook[2]) =="valid"){
+        var locksee = window.atob(userelcook[1]);
+        var motoad = document.getElementById('entry.2036725465');
+        motoad.value= locksee;
+        var elem = document.createElement('input');
+        elem.id='edtrusd';
+        elem.value= locksee;
+        $('body').append(elem);
+        show_wall(locksee);  document.getElementById("switchtovisit").style.display = "block";
+        document.getElementById("switchtovisit").innerHTML = "<a id='switchtov' title='Switch to Guest' onclick='switchvisitor(this)'>&#10064;</a>";
+      }
+    } 
+   }
   var decodedCookie2 = decodeURIComponent(document.cookie); 
-    var ca = decodedCookie2.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i]; 
-      while (c.charAt(0) == ' ') { c = c.substring(1); 
-      } 
-      if (c.indexOf("_ybize0") == 0) { 
-        var userelcook2 = c.substring(1).split('.');
-        if(window.atob(userelcook2[0].split('ybize0=')[1]) =="ELITE"){
-          var locksee = window.atob(userelcook2[1]);
-          var elem = document.createElement('input');
-          elem.id='edtrusd';
-          elem.value= locksee;
-          $('body').append(elem);
-          var motoad = document.getElementById('entry.2036725465');
-          motoad.value= locksee;
-          var eltckln = userelcook2.length;
-          for (var elk = 2; elk <= eltckln; elk += 3) {
-            var ssnxp = compareDates(window.atob(userelcook2[elk+1])); 
-            if(ssnxp==false){
-            var elck = document.createElement('div');
-            elck.className = 'alleltdiv';
-            var img = document.createElement('img');
-            img.className = 'eltckon';
-            img.src = window.atob(userelcook2[elk]);
-            img.style.cursor = 'pointer';
-            elck.onclick = function() {
-              seteltmn(this);
-            };
-            var input1 = document.createElement('input');
-            input1.className = 'elckud';
-            input1.style.display = 'none';
-            input1.value = window.atob(userelcook2[elk - 1]);
-            var input2 = document.createElement('input');
-            input2.className = 'elcksxp';
-            input2.style.display = 'none';
-            input2.value = window.atob(userelcook2[elk + 1]);
-            elck.appendChild(img);
-            elck.appendChild(input1);
-            elck.appendChild(input2);
-            document.querySelector('#elcondiv').appendChild(elck);
-          } } } } 
-   }}
-}     
+  var ca = decodedCookie2.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]; 
+    while (c.charAt(0) == ' ') { c = c.substring(1); 
+    } 
+    if (c.indexOf("_ybize0") == 0) { 
+      var userelcook2 = c.substring(1).split('.');
+      if(window.atob(userelcook2[0].split('ybize0=')[1]) =="ELITE"){
+        var locksee = window.atob(userelcook2[1]);
+        var elem = document.createElement('input');
+        elem.id='edtrusd';
+        elem.value= locksee;
+        $('body').append(elem);
+        var motoad = document.getElementById('entry.2036725465');
+        motoad.value= locksee;
+        var eltckln = userelcook2.length;
+        for (var elk = 2; elk <= eltckln; elk += 3) {
+          var ssnxp = compareDates(window.atob(userelcook2[elk+1])); 
+          if(ssnxp==false){
+          var elck = document.createElement('div');
+          elck.className = 'alleltdiv';
+          var img = document.createElement('img');
+          img.className = 'eltckon';
+          img.src = window.atob(userelcook2[elk]);
+          img.style.cursor = 'pointer';
+          elck.onclick = function() {
+            seteltmn(this);
+          };
+          var input1 = document.createElement('input');
+          input1.className = 'elckud';
+          input1.style.display = 'none';
+          input1.value = window.atob(userelcook2[elk - 1]);
+          var input2 = document.createElement('input');
+          input2.className = 'elcksxp';
+          input2.style.display = 'none';
+          input2.value = window.atob(userelcook2[elk + 1]);
+          elck.appendChild(img);
+          elck.appendChild(input1);
+          elck.appendChild(input2);
+          document.querySelector('#elcondiv').appendChild(elck);
+        } } } } 
+ }
+}
 
 /*   else if(offrclaimed !="" && usergu != ""){
   var locksee = 0;
@@ -333,7 +356,11 @@ newrl2[k]= nwelud;newrl2[k+1]= nwelpd;newrl2[k+2]= nwelsx; k=k+3;
   }
 }  var nwusrl = newrl1.join('.')+newrl2.join('.');
 document.cookie = "_ybize0="+nwusrl+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
-show_wall(window.atob(usd));$('#elcondiv').empty(); reldelts(); 
+$('#elcondiv').empty(); reldelts();show_wall(window.atob(usd)); 
+var crnwelm = document.createElement('div');
+crnwelm.id="rfshedtr";
+crnwelm.innerHTML="<a onclick='location.reload();'>Editor</a>";
+$('body').append(crnwelm);
 }
 function switchvisitor(label){
   document.getElementById('sdview').disabled=true;
@@ -356,6 +383,7 @@ function switchvisitor(label){
   else if(usergu !=""){
     document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
   }
+  $('#rfshedtr').empty();
 }
    function show_wallEl(){
     var str = document.getElementById('edtrusd').value;
