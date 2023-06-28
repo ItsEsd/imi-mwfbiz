@@ -383,7 +383,6 @@ function delsetElCook(ursel,blcel){
   else{
     document.cookie = "_ybize0=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";  setTimeout(function(){location.reload()},100);
   }
-  
 }
 function switchvisitor(label){
   document.getElementById('sdview').disabled=true;
