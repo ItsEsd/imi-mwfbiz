@@ -65,7 +65,7 @@ function delrvcomment(label){
     var x = document.getElementsByClassName('rvcmntid');
          var cmntid = x[posofinput].value;
          var ur1="https://script.google.com/macros/s/";
-         var ur2="AKfycbzxxs9rYu1E8dbAljk38i5XIjj_73bpGGDo-r_tt1xVtXy4cnkvLwoKiAeagYulqOKQjQ";
+         var ur2="AKfycbySakWnojRMIFyk55UxGx1cvm_42t6AyiXWcRRyotwVfckZc2sf5SGfSJv3bRK8FGzQ";
          var urcmt_ = ur1+ur2 +"/exec"
          var url = urcmt_ + "?callback=ctrlqcmntdel&comntid=" + cmntid + "&action=delcomnt";
          var request = jQuery.ajax({
@@ -76,5 +76,7 @@ function delrvcomment(label){
          });
   }
   function ctrlqcmntdel(e){
-    showreviews();
+    if(e.result=="Content deleted successfully!"){
+        showreviews();
+    }
 }
