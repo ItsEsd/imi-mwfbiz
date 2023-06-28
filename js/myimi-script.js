@@ -371,13 +371,11 @@ function delsetElCook(ursel,blcel){
   for(var mtch =1;mtch<usrck.length;mtch+=3){
   if(usrck[mtch]==window.btoa(blcel)){
     var nwusrl =  '.'+usrck[mtch]+'.'+usrck[mtch+1]+'.'+usrck[mtch+2];
-    // console.log(nwusrl);
   }
   }
   var parts = ursel.split(nwusrl); 
   var nwstring = parts.join('');
   var nwrld = nwstring.split('.');
-  // console.log(nwstring);
   if(nwrld.length>2){
     document.cookie = "_ybize0="+nwstring+"; expires=" + nwrld[3] + ";path=/;domain=mwfbiz.com";
   }
