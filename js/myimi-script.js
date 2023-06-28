@@ -339,7 +339,7 @@ var usd = window.btoa(elmud[posof].value);
 var pcl = window.btoa(elmpd[posof].src);
 var sxpm = window.btoa(elmsx[posof].value);
 var userel = elGetCookie("_ybize0");
-var expires = "expires=" + window.btoa(sxpm);
+var expires = "expires=" + window.atob(sxpm);
 var usrck = userel.split('.');
 var newrl1 =[];
 newrl1[0] = usrck[0];
@@ -377,10 +377,10 @@ function delsetElCook(ursel,blcel){
   var nwstring = parts.join('');
   var nwrld = nwstring.split('.');
   if(nwrld.length>2){
-    document.cookie = "_ybize0="+nwstring+"; expires=" + nwrld[3] + ";path=/;domain=mwfbiz.com";
+    document.cookie = "_ybize0="+nwstring+"; expires=" + window.atob(nwrld[3]) + ";path=/;domain=mwfbiz.com";setTimeout(function(){location.reload()},100);
   }
   else{
-    document.cookie = "_ybize0=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";  setTimeout(function(){location.reload()},3000);
+    document.cookie = "_ybize0=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";  setTimeout(function(){location.reload()},100);
   }
   
 }
@@ -708,8 +708,7 @@ function ctrlqelp(e) {
       };
        if(stt() == "Add"){
   var uid = userel+"."+usd+"."+psd+"."+ window.btoa(sessexp);
-  var expires = "expires=" + sessexp;
-  document.cookie = "_ybize0="+uid+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
+  document.cookie = "_ybize0="+uid+";path=/;domain=mwfbiz.com";
   $('#elcondiv').empty(); reldelts();
       } return false;
     }
@@ -724,6 +723,7 @@ function ctrlqelp(e) {
     }
   }
 }
+
   function reldelts(){
     var userelcook = elGetCookie("_ybize0").split('.');
     var eltckln = userelcook.length;
