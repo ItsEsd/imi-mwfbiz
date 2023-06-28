@@ -329,6 +329,7 @@ else if(userel !="" && usermi=="" ){
 }
 
 function seteltmn(label){
+  $('#stsst').remove();
 var list=document.getElementsByClassName("alleltdiv");
 list = [].slice.call(list);
 var posof = list.indexOf(label);
@@ -478,12 +479,12 @@ else if(res[0].GIFGifts!=''){
   var isid = res[0].ADMIINId; 
   var userel = elGetCookie("_ybize0"); 
   var user = elGetCookie("_ybizc0"); 
-  if(userel!="" && res[0].RestrictElt =="Restricted"){
+  if(userel!="" && user =="" && res[0].RestrictElt =="Restricted"){
     var rstcd = document.createElement('div');
     rstcd.id="rstcd";
     rstcd.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
    $('body').append(rstcd); 
-   delsetElCook(userel,isid);  return;
+   delsetElCook(userel,isid); return;
   }
   else if(user !="" && res[0].RestrictElt =="Restricted"){
     var crelm = document.createElement('div');
