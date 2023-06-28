@@ -39,19 +39,18 @@ document.getElementById('commentInbox').innerHTML +="<div class='reviewelm'><p c
         $('.delcombtn').hide();
      }
      else if(user != ""){
-if(uid() != lksee){
-    $('.delcombtn').hide();
-}
-else{
-    $('.delcombtn').show();
-}
-
-     }
-    else{
-        $('.delcombtn').hide();
-       }
-});
-}
+        if(uid() != lksee){
+            $('.delcombtn').hide();
+        }
+        else{
+            $('.delcombtn').show();
+        }
+            }
+            else{
+                $('.delcombtn').hide();
+            }
+        });
+        }
 function viewrform(){
     document.getElementById("ref").innerHTML='See Comments<i class="fa fa-comments" style="margin-left:10px;font-size:20px;"></i>';
     $("#sdview").hide();
