@@ -378,7 +378,13 @@ function delsetElCook(ursel,blcel){
   var nwstring = parts.join('');
   var nwrld = nwstring.split('.');
   // console.log(nwstring);
-  document.cookie = "_ybize0="+nwstring+"; expires=" + nwrld[3] + ";path=/;domain=mwfbiz.com";
+  if(nwrld.length>2){
+    document.cookie = "_ybize0="+nwstring+"; expires=" + nwrld[3] + ";path=/;domain=mwfbiz.com";
+  }
+  else{
+    document.cookie = "_ybize0=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";  setTimeout(function(){location.reload()},3000);
+  }
+  
 }
 function switchvisitor(label){
   document.getElementById('sdview').disabled=true;
