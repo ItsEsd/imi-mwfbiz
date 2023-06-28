@@ -362,6 +362,24 @@ crnwelm.id="rfshedtr";
 crnwelm.innerHTML="<a onclick='location.reload();'>Editor</a>";
 $('body').append(crnwelm);
 }
+
+function delsetElCook(ursel,blcel){
+  var userel = elGetCookie("_ybize0");
+  var usrck = userel.split('.');
+  var newrl =[];
+  newrl[0] = usrck[0];var k=1;
+  for(var mtch =1;mtch<usrck.length;mtch+=3){
+  if(usrck[mtch]==window.btoa(blcel)){
+    var nwusrl =  '.'+usrck[mtch]+'.'+usrck[mtch+1]+'.'+usrck[mtch+2];
+    // console.log(nwusrl);
+  }
+  }
+  var parts = ursel.split(nwusrl); 
+  var nwstring = parts.join('');
+  var nwrld = nwstring.split('.');
+  // console.log(nwstring);
+  document.cookie = "_ybize0="+nwstring+"; expires=" + nwrld[3] + ";path=/;domain=mwfbiz.com";
+}
 function switchvisitor(label){
   document.getElementById('sdview').disabled=true;
   var vistr = "bizbebpi85gkgfhd4g58ld01n";
@@ -453,14 +471,15 @@ if(res ==='Set Motto!'){
 '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
 else if(res[0].GIFGifts!=''){
+  var isid = res[0].ADMIINId; 
   var userel = elGetCookie("_ybize0"); 
   var user = elGetCookie("_ybizc0"); 
   if(userel!="" && res[0].RestrictElt =="Restricted"){
     var rstcd = document.createElement('div');
     rstcd.id="rstcd";
     rstcd.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
-   $('body').append(rstcd);
-    // deleteAllCookies();  
+   $('body').append(rstcd); 
+   delsetElCook(userel,isid);  return;
   }
   else if(user !="" && res[0].RestrictElt =="Restricted"){
     var crelm = document.createElement('div');
