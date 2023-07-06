@@ -474,7 +474,7 @@ if(res ==='Set Motto!'){
   document.getElementById("GIF2").innerHTML =
 '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
 }
-else if(res[0].GIFGifts!=''){
+else if(res[0].GIFGifts!='' && res[0].imiNews!=''){
   var isid = res[0].ADMIINId; 
   var userel = elGetCookie("_ybize0"); 
   var user = elGetCookie("_ybizc0"); 
@@ -559,7 +559,7 @@ function ctrlqobdmED(e){
     document.getElementById("GIF2").innerHTML =
   '<h4 class="noobdm">Empty MONOLOGUE!</h4>';
   }
-  else if(res[0].GIFGifts!=''){
+  else if(res[0].GIFGifts!='' && res[0].imiNews!=''){
     var userel = elGetCookie("_ybize0"); 
     if(userel!="" && res[0].RestrictElt =="Restricted"){
       var rstcded = document.createElement('div');
@@ -788,7 +788,7 @@ function show_wallV(vistr) {
 }
 function ctrlqobdmv(e){
 var res = e.result;
-if(res[0].GIFGifts!=''){
+if(res[0].GIFGifts!='' && res[0].imiNews!=''){
 var g = Math.floor((Math.random() * 6) + 1);
 var gifts = JSON.parse(res[0].GIFGifts);
 //    for (prop in json.records[g]) {
