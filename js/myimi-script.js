@@ -482,8 +482,8 @@ else if(res[0].GIFGifts!='' && res[0].imiNews!=''){
     var rstcd = document.createElement('div');
     rstcd.id="rstcd";
     rstcd.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
-   $('body').append(rstcd); 
-   delsetElCook(userel,isid); return;
+   $('body').append(rstcd); setTimeout(function(){delsetElCook(userel,isid);},2000);
+    return; 
   }
   else if(user !="" && res[0].RestrictElt =="Restricted"){
     var crelm = document.createElement('div');
