@@ -381,7 +381,7 @@ function delsetElCook(ursel,blcel){
     document.cookie = "_ybize0="+nwstring+"; expires=" + window.atob(nwrld[3]) + ";path=/;domain=mwfbiz.com";setTimeout(function(){location.reload()},100);
   }
   else{
-    document.cookie = "_ybize0=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";  setTimeout(function(){location.reload()},100);
+    document.cookie = "_ybize0=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";  setTimeout(function(){location.reload()},2000);
   }
 }
 function switchvisitor(label){
@@ -479,10 +479,10 @@ else if(res[0].GIFGifts!='' && res[0].imiNews!=''){
   var userel = elGetCookie("_ybize0"); 
   var user = elGetCookie("_ybizc0"); 
   if(userel!="" && user =="" && res[0].RestrictElt =="Restricted"){
-    var rstcd = document.createElement('div');
+    $('#showhtml').empty();var rstcd = document.createElement('div');
     rstcd.id="rstcd";
     rstcd.innerHTML ="<center><div style='background:#0000009d;color:#ffffffef;padding:20px;margin-top:0px;margin-top:300px;'><h3 style='font-family:Courier New'>🚫 Not Available 🚫</h3></div></center>";
-   $('body').append(rstcd); setTimeout(function(){delsetElCook(userel,isid);},2000);
+   $('body').append(rstcd);delsetElCook(userel,isid);
     return; 
   }
   else if(user !="" && res[0].RestrictElt =="Restricted"){
