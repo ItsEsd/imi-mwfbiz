@@ -94,10 +94,6 @@ function fetmono(){
   if(ssnxp==false){
     document.getElementById('elpassop').value= qsfp[1];
     enteringelop();
-    var shname = "/";
-    let stateObj = { id: "0" };
-    window.history.replaceState(stateObj,
-     "", shname);
   }
   else{
     var newElement = document.createElement('div');
