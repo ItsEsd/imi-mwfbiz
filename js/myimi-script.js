@@ -663,7 +663,10 @@ function enteringelop() {
   var elop = String($('#elpassop').val());
   var oplen = elop.length;
   if (oplen == 11) {
-    if(userel =="" && usermi ==""  && user ==""){
+    if(usergu !="") { document.body.innerHTML="";
+      deleteAllCookies(); setTimeout(function(){location.reload();},1000);
+    }
+    else if(userel =="" && usermi ==""  && user ==""){
       $('#promodiv').fadeIn('slow');
       document.getElementById('promodiv').style.height = '100%';
     }
@@ -676,11 +679,17 @@ function enteringelop() {
       method: "GET",
       dataType: "jsonp"
     });
+
   } else {
     return false;
   }
+ 
 }
 function ctrlqelp(e) {
+  var shname = "/";
+  let stateObj = { id: "0" };
+  window.history.replaceState(stateObj,
+   "", shname);
   var outp = e.result;
   if (outp != "Pass not found!") {
     var sessexp = outp[0].SessionExpireDT;
