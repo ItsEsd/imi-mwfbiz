@@ -856,7 +856,7 @@
   left:0px;
   position: fixed;
   width:100%;z-index: 1000;
-  
+  display: none;
 }
   #elcondiv{
     max-width:75px;
