@@ -55,8 +55,10 @@ var user = elGetCookie("_ybizc0");
 var usergu = elGetCookie("_ybizv0"); 
 var userel = elGetCookie("_ybize0"); 
 var usermi = elGetCookie("_ybizm0");
+if (userel !=""){
+  document.getElementById("elconcolp").style.display = "block";
+}
 if (user != "" && userel =="") {
-
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -79,7 +81,6 @@ if (user != "" && userel =="") {
     } 
    }
 } 
-
 else if(user != "" && userel !=""){
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
@@ -663,7 +664,7 @@ function enteringelop() {
   var elop = String($('#elpassop').val());
   var oplen = elop.length;
   if (oplen == 11) {
-    if(usergu !="") { document.body.innerHTML="";
+    if(usergu !="" && usermi=="") { document.body.innerHTML="";
       deleteAllCookies(); setTimeout(function(){location.reload();},1000);
     }
     else if(userel =="" && usermi ==""  && user ==""){
@@ -692,6 +693,7 @@ function ctrlqelp(e) {
    "", shname);
   var outp = e.result;
   if (outp != "Pass not found!") {
+    document.getElementById("elconcolp").style.display = "block";
     var sessexp = outp[0].SessionExpireDT;
     var elkey = outp[0].UserRefId;
     document.getElementById('refobdm').value= elkey;
@@ -725,7 +727,7 @@ function ctrlqelp(e) {
       var uid =window.btoa(String('ELITE'))+"."+window.btoa(String(outp[0].UserRefId))+"."+window.btoa(ftchpic[0])+"."+ window.btoa(sessexp);
       elSetCookie(sessexp,uid); 
       if(userel ==""){
-        if(user !=""){
+        if(user !=""  || usermi !=""){
           $('#elcondiv').empty(); reldelts();
         }else{location.reload();
       }}
