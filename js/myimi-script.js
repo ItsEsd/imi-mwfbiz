@@ -177,7 +177,7 @@ else if(usergu != ""){
     document.getElementById('showhtml').style.filter = "blur(4px)";
     document.getElementById('showhtml').innerHTML = "";
    $('#falsebacksigup,#sigcontainerimi').fadeIn();
-  },900000);
+  },600000);
   document.getElementById('submitview').disabled = true;
   document.getElementById('submitview').style.cursor = 'not-allowed';
   document.getElementById("switchtovisit").style.display = "block";
@@ -388,12 +388,7 @@ function delsetElCook(ursel,blcel){
 function switchvisitor(label){
   document.getElementById('sdview').disabled=true;
   var vistr = "bizbebpi85gkgfhd4g58ld01n";
-    show_wallV(vistr); document.getElementById("entry.2036725465").value = vistr;
-    setTimeout(function(){
-    document.getElementById('showhtml').style.filter = "blur(4px)";
-    document.getElementById('showhtml').innerHTML = "";
-   $('#falsebacksigup,#sigcontainerimi').fadeIn();
-  },3600000);
+  show_wallV(vistr); document.getElementById("entry.2036725465").value = vistr;
   if(usermi !=""){
     document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
   }
