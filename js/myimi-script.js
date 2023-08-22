@@ -177,7 +177,7 @@ else if(usergu != ""){
     document.getElementById('showhtml').style.filter = "blur(4px)";
     document.getElementById('showhtml').innerHTML = "";
    $('#falsebacksigup,#sigcontainerimi').fadeIn();
-  },600000);
+  },7200000);
   document.getElementById('submitview').disabled = true;
   document.getElementById('submitview').style.cursor = 'not-allowed';
   document.getElementById("switchtovisit").style.display = "block";
