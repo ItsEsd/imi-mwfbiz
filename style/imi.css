@@ -888,7 +888,7 @@ background-color: rgba(253, 43, 43, 0.658);
     width:100%;
     max-width:800px;
     text-align: left;
-    background-color: #ffffffcb;
+    background-color: #f0f0f0;
     z-index: 1000;
     overflow-y: auto;
   }
