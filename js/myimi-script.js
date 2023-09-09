@@ -186,6 +186,7 @@ else if(usergu != ""){
 
 
 else if(userel !="" && usermi !=""){
+  document.getElementById('signupimi').style.display="none";
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -254,6 +255,7 @@ else if(userel !="" && usermi !=""){
 
 
 else if(usermi!="" && userel ==""){
+  document.getElementById('signupimi').style.display="none";
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
