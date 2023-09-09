@@ -944,3 +944,7 @@
   #rfshedtr :hover{
     background-color: #161616;
   }
+
+  #commentInbox{
+    word-wrap: break-word;
+  }
