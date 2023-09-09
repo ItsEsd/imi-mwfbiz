@@ -11,7 +11,7 @@ function showreviews(lksee){
     }
 var countcmnt = "n";
 var ur1="https://script.google.com/macros/s/";
-var ur2="AKfycbyzJPAp1Ep0pwT74LnzdvbnRj7xxGcfWj1chl5gmqC3cUnQNWk5gP05ltgycDHpr2djpg";
+var ur2="AKfycbxQlWB-XIZEgqUoXfmvBnisXLl8l3k-5yEXasTOEUICAeURz_kVW0-BMjqE8xHiRaIAlw";
 var url= ur1+ur2+"/exec"+"?action=read";
 jQuery.getJSON(url, function(json) {
     json.records.reverse();
@@ -79,3 +79,36 @@ function delrvcomment(label){
         showreviews();
     }
 }
+
+  $('#rvform').on('submit', function(e) {
+    document.getElementById('submitview').disabled=true;
+    var currentDate= new Date();
+    var tpsmpiso = currentDate.toISOString();
+    var namd=document.getElementById('entry.1140798952').value;
+    var emid=document.getElementById('entry.38856564').value;
+    var cmmnt=escape(document.getElementById('entry.1148292079').value);
+    var cmntd=document.getElementById('entry.103080979').value;
+    var admnd=document.getElementById('entry.2036725465').value;
+    var ur1="https://script.google.com/macros/s/";
+var ur2="AKfycbxQlWB-XIZEgqUoXfmvBnisXLl8l3k-5yEXasTOEUICAeURz_kVW0-BMjqE8xHiRaIAlw/exec";
+var url = ur1+ur2 + "?callback=ctrlqcmntm&tpsmpiso=" + tpsmpiso+ 
+ "&namd=" + namd + "&emid=" + emid + 
+ "&cmmnt=" + cmmnt + "&cmntd=" + cmntd + "&admnd=" + admnd + 
+ "&prvl=mwfbiz.com&action=inim";
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url,
+      method: "GET",
+      dataType: "jsonp"
+    });
+    console.log(url);
+    e.preventDefault();
+    });
+
+    function ctrlqcmntm(e){
+      var res=e.result; console.log(res);
+      if(res=='updated'){
+        showreviews();
+    document.getElementById('entry.1148292079').value="";
+      }
+    }
