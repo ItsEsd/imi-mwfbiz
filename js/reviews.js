@@ -25,7 +25,7 @@ document.getElementById('commentInbox').innerHTML +="<div class='reviewelm'><p c
       countcmnt ="y";}
     }
     if(countcmnt =="n"){
-        document.getElementById('commentInbox').innerHTML ="<div class='norevwyt'><center><h4>No Comments. Be first to give a Comment.</h4></center></div>";
+        document.getElementById('commentInbox').innerHTML ="<div class='norevwyt'><center><h4>Empty</h4></center></div>";
      }
      document.getElementById('loader-rv').style.display="none";
      var user = elGetCookie("_ybizc0"); 
