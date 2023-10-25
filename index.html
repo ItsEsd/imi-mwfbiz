@@ -47,7 +47,7 @@
     <div id="tea">
       <div style="display:block;" id="miv" >
       <center> <div id="id02" style="display:none;">
-          <form class="modal-content animate birthdate-verification registerForm" id="register" name="registration" target="hiddenfrm" autocomplete="off">
+          <form class="modal-content animate birthdate-verification registerForm" id="register" name="registration" onsubmit="event.preventDefault();" autocomplete="off">
             <div class="imgcontainer"> <span onclick="document.getElementById('id02').style.display='none';document.getElementById('guru_eye').style.display='block';" class="close" title="Close">&times;</span> <img src="../image/blackglobegif.gif" class="logo"> <br><br>
               <h2 style="color:#161616;">mind Without Fear</h2>
               <div align="center">
@@ -416,7 +416,7 @@
           </div>
           <div id="modPass" style="background-color:white;border-radius:10px;width:80%;display:none;max-width:400px;"><br>
             <div id="showPass"></div>
-            <form id="newPassForm" target="hiddenfrm" align="center" style="max-width:400px;width:80%;"><input id="passwordnew" class="form-control" placeholder="New Passcode" type="password" required /><br><span id="messagenew" style="float:right;color:red;"></span><input id="confirm_passwordnew" class="form-control " placeholder="Confirm Passcode" type="password" required /><br><input id="svnewpass" class="passbtn" type="submit" value="Save" style="margin-right:4px;" disabled /><input type="button" value="Close" onclick="document.getElementById('modPass').style.display='none';document.getElementById('repass').style.display='block';" class="passbtn" /></form><br>
+            <form id="newPassForm" onsubmit="event.preventDefault();" align="center" style="max-width:400px;width:80%;"><input id="passwordnew" class="form-control" placeholder="New Passcode" type="password" required /><br><span id="messagenew" style="float:right;color:red;"></span><input id="confirm_passwordnew" class="form-control " placeholder="Confirm Passcode" type="password" required /><br><input id="svnewpass" class="passbtn" type="submit" value="Save" style="margin-right:4px;" disabled /><input type="button" value="Close" onclick="document.getElementById('modPass').style.display='none';document.getElementById('repass').style.display='block';" class="passbtn" /></form><br>
           </div><br>
           <div align="center" style="padding-top:0px;"><p><span class="qb" onclick="goBack()" style="cursor:pointer;text-align: center;">&#10020; Mind Without Fear | M W F >></span></p></div>
     <div align="center" style="width: 100%;z-index:0;">
@@ -442,7 +442,7 @@
           <div align="center" id="title"> <img src="../image/bandwgif_globe.gif" width="60px"><br><br>
             <h2>mind Without Fear</h2>
           </div>
-          <form id="signin" target="hiddenfrm">
+          <form id="signin" onsubmit="event.preventDefault();">
             <div class="container">
               <div class="page"> <label class="field field_v3" id="mailblock"> <input type="email" class="field__input" placeholder="e.g. example@gmail.com" name="email1" id="email1" required> <span class="field__label-wrap"> <span class="field__label"> <i class="fa fa-envelope" style="color:#DD1d16"></i> Enter Email</span> </span> </label> <label class="field field_v3"> 
                 <input type="password" id="password1" name="password1" class="field__input" placeholder="e.g. **********" autocomplete="off" required> 
@@ -495,7 +495,6 @@
 </div>
 </div>
 </div>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 </section>
 <section>
 <div id="switchtovisit" >
@@ -553,7 +552,6 @@
         <hr style="border-width:1px;border-color:white;width:98%">
       </div><br>
     </div><br><br>
-    <iframe name="hiddenfrm" target="hiddenfrm" style="display:none;"></iframe>
     <!--------Footer----->
     <footer style="background:black;">
       <div align="center" style="background:black;">
