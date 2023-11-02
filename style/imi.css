@@ -658,7 +658,6 @@ background-color: rgba(253, 43, 43, 0.658);
       background-color: #161616;
       font-size: 12px;
       padding: 5px 10px;
-      margin-left: 2px;
       display: inline-block;
     }
 
@@ -1319,4 +1318,8 @@ footer{
 width:14px;
 height:14px;
 margin-top:-4px;
+}
+
+#News1 iframe{
+  background-color: #313131;
 }
