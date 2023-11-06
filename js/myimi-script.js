@@ -186,7 +186,6 @@ else if(usergu != ""){
 
 
 else if(userel !="" && usermi !=""){
-  document.getElementById('signupimi').style.display="none";
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -255,7 +254,6 @@ else if(userel !="" && usermi !=""){
 
 
 else if(usermi!="" && userel ==""){
-  document.getElementById('signupimi').style.display="none";
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -416,6 +414,7 @@ function switchvisitor(label){
    function show_wall(locksee) {
         document.getElementById("entry.2036725465").value = locksee;
         document.getElementById('sdview').disabled=false;
+        document.getElementById('signupimi').style.display="none";
         jQuery('.hrstyle').hide();
         jQuery("#YoutubeOne").empty();
         jQuery("#News1").empty();
@@ -443,6 +442,7 @@ function switchvisitor(label){
         var edlksee = 'bizeditor18qkh983motto821i0';
         document.getElementById("entry.2036725465").value = edlksee;
         document.getElementById('sdview').disabled=false;
+        document.getElementById('signupimi').style.display="none";
         jQuery('.hrstyle').hide();
         jQuery("#YoutubeOne").empty();
         jQuery("#News1").empty();
@@ -768,9 +768,10 @@ $(document).ready(function(){
 document.body.style.scrollTop = "0px";
 });
 
-/////////////////////////////////////////////////////
 
 function show_wallV(vistr) {
+  document.getElementById('signupimi').style.display="block";
+  // signuppocmntp();
   jQuery('.hrstyle').hide();
   jQuery("#YoutubeOne").empty();
   jQuery("#News1").empty();
@@ -793,6 +794,14 @@ function show_wallV(vistr) {
   });
   showreviews(vistr);
 
+}
+function signuppocmntp(){
+  if(usermi!=""){
+    document.getElementById('signupimi').style.display="none";
+      }
+      else{
+        document.getElementById('signupimi').style.display="block";
+      }
 }
 function ctrlqobdmv(e){
 var res = e.result;

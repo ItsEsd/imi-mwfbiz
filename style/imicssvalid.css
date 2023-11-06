@@ -814,15 +814,30 @@
   border:1px solid grey;
   }
   #signupimi{
-    float:right;
+    text-align:left;
     font-size: 12px;
     background-color: transparent;
     border:0px;
-    margin:0px;
     border-radius: 0px;
     display: none;
+    margin:0px;
+    padding:0px;
+    /* margin-top:10px; */
+    width:100%;
   }
-
+  #rvcmmsgs{
+    width:100%;
+    margin:0px auto;
+    padding:10px;
+    padding-bottom:10px;
+    font-size:12px;
+    color:#9d9d9d;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+#signupimi:hover{
+  color:grey;
+  padding-left:10px;
+}
   #edtrusd{
     top:0px;
     right:0px;
