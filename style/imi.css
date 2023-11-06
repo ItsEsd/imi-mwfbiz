@@ -864,7 +864,7 @@
   }
   #rvform{
   min-height:380px;
-  margin-bottom:10px;
+  margin-bottom:20px;
   }
   #rvform .form-control{
   margin-top:10px;
@@ -979,7 +979,7 @@
   height:40px;
   border-radius: 50px;
   width:180px;
-  margin-top:20px;
+  margin-top:5px;
   display: none;
   }
 
