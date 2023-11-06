@@ -822,7 +822,7 @@
     display: none;
     margin:0px;
     padding:0px;
-    /* margin-top:10px; */
+    padding-bottom:10px;
     width:100%;
   }
   #rvcmmsgs{
