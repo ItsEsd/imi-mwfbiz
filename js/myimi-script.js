@@ -771,7 +771,6 @@ document.body.style.scrollTop = "0px";
 /////////////////////////////////////////////////////
 
 function show_wallV(vistr) {
-  document.getElementById('sdview').disabled=false;
   jQuery('.hrstyle').hide();
   jQuery("#YoutubeOne").empty();
   jQuery("#News1").empty();
