@@ -468,7 +468,6 @@
    <div id="commentInbox">  
     </div> 
     </div>
-<!--------->
 <form id="rvform">
 <div class="row">
   <div class="col-md-6">
@@ -482,16 +481,17 @@
 </div>
 <br>
 <label>Comment:</label>
-<textarea type="text" class="form-control" style="height:140px;overflow-y:auto;" minlength="200" maxlength="500" placeholder="Minimum 200 Characters" name="entry.1148292079" id="entry.1148292079" required></textarea><br>
-<input type="submit" id='submitview' value="Post Comment" /><input type="button" id='signupimi' onclick= "deleteAllCookies();" value="Sign up for IMI - MONOLOGUE" /><br>
+<textarea type="text" class="form-control" style="min-height:150px;overflow-y:auto;" minlength="200" maxlength="500" placeholder="Minimum 200 Characters" name="entry.1148292079" id="entry.1148292079" required></textarea><br>
+<input type="submit" id='submitview' value="Post Comment" /><input type="button" id='signupimi' onclick= "deleteAllCookies();" value="Sign up as MONOLOGUE member" /><br>
 <input id="entry.2036725465" name="entry.2036725465" style="display: none;" placeholder="adminid"><input id="entry.103080979" name="entry.103080979" style="display: none;" placeholder="commnetid">
   </form>
-<!-------->  
  <div style="background-color: rgba(255, 255, 255, 0);height:120px;border-top: 1px solid #80808070;padding-top:20px;"> 
   <div align ='left'>
    <button class="btn btn-outline-success" id="sdview" onclick='viewrform();'>Write a Comment</button>
   <button class="btn btn-dark" id="rvbtn" onclick="showreviews();"><span id='ref'>See Comments<i class="fa fa-comments" style="margin-left:10px;font-size:20px;"></i></span>
-  </button></div>
+  </button>
+  
+</div>
 </div>
 </div>
 </div>
@@ -627,7 +627,7 @@
           setTimeout(typeWriter, speed);  
         }
       }
-      setInterval(function(){console.clear();},100);
+      // setInterval(function(){console.clear();},100);
             </script><script src="https://mwfbiz.com/js/deviceinfo.js"></script>
     <noscript> Your browser does not support JavaScript!
     </noscript></body></html>
