@@ -907,7 +907,7 @@
   border:0px;
   font-size:18px;
   background-color:#e94545;
-  color:white;
+  color:white;border-radius: 0px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
@@ -923,6 +923,7 @@ height:50px;
 font-size: 18px;
 background-color: #b9b9b9;
 border:0px;
+border-radius: 0px;
 outline:none;
 padding:10px;
 color:#c80909;
