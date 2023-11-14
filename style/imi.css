@@ -463,6 +463,8 @@
   #pcheck{
   border:0px;
   background-color: transparent;
+  padding:0px;
+  margin:0px;
   }
   img {
   pointer-events: none;
@@ -510,6 +512,9 @@
   #loader {
   display: inline-block;
   visibility: hidden;
+  font-size:20px;
+  width:50px;
+  height:50px;
   }
 
   #loader_mc {
@@ -769,6 +774,9 @@
   }
 
   .glow2 {
+    max-width:600px;
+    padding:10px;
+    background-image: linear-gradient(270deg,#ffffff02,#ffffff12,#000000af,#000000af,#000000a4,#ffffff15,#ffffff0a);
   color: #fff;
   text-align: center;
   animation: glow2 1s ease-in-out infinite alternate;
@@ -1276,24 +1284,32 @@
   color:#fff;
   text-shadow:1px 1px white;
   font-weight:600;
+  letter-spacing: 10px;
+  }
+  .bottomdiv{
+    bottom:60px;left:0px;
+    position: fixed;width:100%;
   }
   @media screen and (max-width: 700px) {
   .contit{
-  font-size:50px;
+  font-size:45px;
+  letter-spacing: 3px;
   }
   #rvbtn{width: 100%;}
   }
 
   @media screen and (min-width: 700px) {
   .contit{
-  font-size:60px;
+    letter-spacing: 5px;
+  font-size:55px;
   }
 
   }
 
   @media screen and (min-width: 1000px) {
   .contit{
-  font-size:80px;
+  font-size:90px;
+  letter-spacing: 15px;
   }
 
   }
