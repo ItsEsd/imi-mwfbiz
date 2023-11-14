@@ -362,7 +362,7 @@ $('#elcondiv').empty(); reldelts();show_wall(window.atob(usd));
 }
 var crnwelm = document.createElement('div');
 crnwelm.id="rfshedtr";
-crnwelm.innerHTML="<a>&#11134; ELITE</a>";
+crnwelm.innerHTML="<a>⭾ ELITE</a>";
 $('body').append(crnwelm);
 document.getElementById('rfshedtr').addEventListener('click',function(){entrnwelp()});
 function entrnwelp(){
