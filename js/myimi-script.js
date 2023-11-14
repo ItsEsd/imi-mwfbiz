@@ -359,10 +359,28 @@ newrl2[k]= nwelud;newrl2[k+1]= nwelpd;newrl2[k+2]= nwelsx; k=k+3;
 }  var nwusrl = newrl1.join('.')+newrl2.join('.');
 document.cookie = "_ybize0="+nwusrl+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
 $('#elcondiv').empty(); reldelts();show_wall(window.atob(usd)); 
+}
 var crnwelm = document.createElement('div');
 crnwelm.id="rfshedtr";
-crnwelm.innerHTML="<a onclick='location.reload();'>Editor</a>";
+crnwelm.innerHTML="<a>⭾ ELITE</a>";
 $('body').append(crnwelm);
+document.getElementById('rfshedtr').addEventListener('click',function(){entrnwelp()});
+function entrnwelp(){
+  var nwelpdv = document.createElement('div');
+  nwelpdv.id="nwelpdv";
+  nwelpdv.innerHTML="<div class='entelepldv'><center><div class='elpnwdiv'><input id='entrnwelp' placeholder='Enter Elite Pass'><input type='button' id='clsnwelpdv'  value='&times;'></div></center></div>";
+$('body').append(nwelpdv);
+document.getElementById('clsnwelpdv').addEventListener('click',function(){
+  $('#nwelpdv').remove();$('#nwelpdv').empty();});
+document.getElementById('entrnwelp').addEventListener('input',function(){
+  var elnp = String($('#entrnwelp').val());
+  document.getElementById('elpassop').value= elnp;
+  var lenelp = elnp.length;
+  if (lenelp == 11) {
+    enteringelop();
+    $('#nwelpdv').remove();$('#nwelpdv').empty();
+  }
+});
 }
 
 function delsetElCook(ursel,blcel){
@@ -401,7 +419,6 @@ function switchvisitor(label){
   else if(usergu !=""){
     document.getElementById("switchtovisit").innerHTML = "<a id='switchtoc' title='BIZ Editorial' onclick='show_wallEd();'>&#10064;</a>";
   }
-  $('#rfshedtr').empty();
 }
    function show_wallEl(){
     var str = document.getElementById('edtrusd').value;
@@ -411,7 +428,7 @@ function switchvisitor(label){
     var str = document.getElementById('edtrusd').value;
     show_wall(str);
    }  
-   function show_wall(locksee) {
+   function show_wall(locksee) { $('#rfshedtr').show();
         document.getElementById("entry.2036725465").value = locksee;
         document.getElementById('sdview').disabled=false;
         document.getElementById('signupimi').style.display="none";
@@ -758,7 +775,6 @@ function ctrlqelp(e) {
       elck.appendChild(input2);
       document.querySelector('#elcondiv').appendChild(elck);
     }
-    // document.getElementsByClassName('alleltdiv')[0].style.pointerEvents ="none";
   }
 $('#motoinfoicon').click(function(){
 $('#mottoconhold').toggle();
@@ -769,9 +785,8 @@ document.body.style.scrollTop = "0px";
 });
 
 
-function show_wallV(vistr) {
+function show_wallV(vistr) { $('#rfshedtr').hide();
   document.getElementById('signupimi').style.display="block";
-  // signuppocmntp();
   jQuery('.hrstyle').hide();
   jQuery("#YoutubeOne").empty();
   jQuery("#News1").empty();
