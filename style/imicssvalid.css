@@ -885,7 +885,50 @@
     width:2px;
     height:2px;
   }
- 
+ .entelepldv{
+  top:0;left:0;
+  position: fixed;
+  width: 100%;
+  height:100%;
+  background-color: #161616e8;
+  z-index: 1000;
+ }
+ .elpnwdiv{
+  margin-top:19%;
+ }
+ #nwelpdv{
+  display: block;
+ }
+ #clsnwelpdv{
+  display: inline-block;
+  height:50px;
+  width:40px;
+  border-radius: 0px;
+  border:none;
+  font-size:18px;
+  background-color:#e94545;
+  color:white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+ }
+ #clsnwelpdv:hover{
+  background-color: #ee6c6c;
+ }
+ #entrnwelp{
+display: inline-block;
+width:80%;
+max-width: 400px;
+height:50px;
+font-size: 18px;
+background-color: #b9b9b9;
+border:0px;
+outline:none;
+padding:10px;
+color:#c80909;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+ }
   .alleltdiv {
     display: inline-block;
     margin:5px; cursor: pointer;
@@ -926,9 +969,12 @@
   .collapsible-header {
     cursor: pointer;
     text-align: center;
-    width:70px
+    width:65px;
+    opacity: 0.4;
   }
-  
+  .collapsible-header:hover{
+    opacity: 0.6;
+  }
   .collapsible-content {
     display: none;
   }
@@ -944,11 +990,10 @@
     transform: rotate(180deg);
   }
   #rfshedtr a{
-    top:20px;
-    right:20px;
+    top:0px;
+    right:3px;
     position: fixed;
-    color:white;
-    background-color: #2f2f2f;
+    color:#ffffff6c;
     cursor: pointer;
     z-index: 20000;
     padding:5px;
@@ -956,7 +1001,8 @@
     font-size: 12px;
   }
   #rfshedtr :hover{
-    background-color: #161616;
+    opacity: 0.6;
+    transition: 0.2s;
   }
 
   #commentInbox{
