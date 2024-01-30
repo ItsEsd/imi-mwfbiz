@@ -350,12 +350,6 @@ button:hover {
   background-color: #f44336;
 }
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
 img.logo {
   width: 100%;
   max-width: 70px;
@@ -377,7 +371,7 @@ button:disabled {
 
 .close {
   position: absolute;
-  right: 25px;
+  right: 10px;
   top: 0;
   color: #000;
   font-size: 35px;

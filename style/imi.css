@@ -347,8 +347,11 @@ button:hover {
 
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+  background-color: #e5e5e5;
+  padding: 10px;
+  padding-top: 30px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 img.logo {
